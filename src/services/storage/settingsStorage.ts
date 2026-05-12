@@ -6,6 +6,7 @@ const STORAGE_KEY = STORAGE_KEYS.settings
 const defaultSettings: AppSettings = {
   theme: 'system',
   language: 'ro',
+  kioskLayout: false,
 }
 
 function isThemeChoice(v: unknown): v is ThemeChoice {
@@ -24,6 +25,7 @@ export function loadSettings(): AppSettings {
     return {
       theme: isThemeChoice(parsed.theme) ? parsed.theme : defaultSettings.theme,
       language: isLanguageCode(parsed.language) ? parsed.language : defaultSettings.language,
+      kioskLayout: parsed.kioskLayout === true,
     }
   } catch {
     return { ...defaultSettings }

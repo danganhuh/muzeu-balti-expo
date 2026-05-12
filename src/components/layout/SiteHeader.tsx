@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next'
 import { logoUrl } from '../../constants/branding'
 import { ThemeToggle } from '../theme/ThemeToggle'
 import { LanguageSwitcher } from '../i18n/LanguageSwitcher'
+import { useKiosk } from '../../providers/KioskProvider'
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
   ['nav__link', isActive ? 'nav__link--active' : ''].filter(Boolean).join(' ')
 
 export function SiteHeader() {
   const { t } = useTranslation()
+  const { kioskLayout } = useKiosk()
 
   return (
     <header className="site-header">
@@ -44,11 +46,13 @@ export function SiteHeader() {
                 {t('nav.games')}
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/cabinet" className={navClass}>
-                {t('nav.cabinet')}
-              </NavLink>
-            </li>
+            {!kioskLayout ? (
+              <li>
+                <NavLink to="/cabinet" className={navClass}>
+                  {t('nav.cabinet')}
+                </NavLink>
+              </li>
+            ) : null}
           </ul>
         </nav>
         <div className="header-toolbar">
