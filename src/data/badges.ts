@@ -66,23 +66,9 @@ export const badgeCatalog: readonly BadgeDefinition[] = [
       en: 'Museum memory',
     },
     description: {
-      ro: 'Ai potrivit toate perechile din jocul de memorie (Bălți & regiune).',
-      ru: 'Вы собрали все пары в игре на память.',
-      en: 'You matched every pair in the Bălți-themed memory game.',
-    },
-  },
-  {
-    id: 'badge:relic-hunter',
-    icon: '🔎',
-    title: {
-      ro: 'Vânător de comori ascunse',
-      ru: 'Охотник за сокровищами',
-      en: 'Hidden relic hunter',
-    },
-    description: {
-      ro: 'Ai descoperit toate punctele „comoară” pe harta pieței.',
-      ru: 'Вы нашли все «сокровища» на карте площади.',
-      en: 'You found every hidden relic hotspot on the square map.',
+      ro: 'Ai potrivit toate perechile din jocul de memorie (imagini din Bălți).',
+      ru: 'Вы собрали все пары в игре на память (снимки из Бельц).',
+      en: 'You matched every pair in the memory game (Bălți imagery).',
     },
   },
 ]

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { LanguageCode } from '../../types/settings'
 import { pickLocalized } from '../../i18n/pickLocalized'
@@ -24,6 +24,15 @@ function sortedIds(events: readonly TimelineEvent[]): string[] {
   return [...events].sort((a, b) => a.year - b.year).map((e) => e.id)
 }
 
+function reorderDrag(order: readonly string[], id: string, toIndex: number): string[] {
+  const from = order.indexOf(id)
+  if (from === -1) return [...order]
+  const next = [...order]
+  next.splice(from, 1)
+  next.splice(toIndex, 0, id)
+  return next
+}
+
 type Props = {
   events: readonly TimelineEvent[]
   language: LanguageCode
@@ -35,6 +44,8 @@ export function ChronologyMission({ events, language }: Props) {
   const [order, setOrder] = useState<string[]>(() => shuffle(targetIds))
   const [status, setStatus] = useState<'idle' | 'success' | 'fail'>('idle')
   const [progress, setProgress] = useState(() => loadChronologyProgress())
+  const [dragId, setDragId] = useState<string | null>(null)
+  const [overIndex, setOverIndex] = useState<number | null>(null)
 
   useEffect(() => {
     setProgress(loadChronologyProgress())
@@ -48,18 +59,9 @@ export function ChronologyMission({ events, language }: Props) {
   const resetShuffle = useCallback(() => {
     setOrder(shuffle(targetIds))
     setStatus('idle')
+    setDragId(null)
+    setOverIndex(null)
   }, [targetIds])
-
-  const move = useCallback((index: number, dir: -1 | 1) => {
-    setStatus('idle')
-    setOrder((prev) => {
-      const j = index + dir
-      if (j < 0 || j >= prev.length) return prev
-      const next = [...prev]
-      ;[next[index], next[j]] = [next[j], next[index]]
-      return next
-    })
-  }, [])
 
   const checkOrder = useCallback(() => {
     const ok = order.every((id, i) => id === targetIds[i])
@@ -86,6 +88,37 @@ export function ChronologyMission({ events, language }: Props) {
     }
   }, [order, targetIds])
 
+  const onDragStart = useCallback((e: DragEvent, id: string) => {
+    setStatus('idle')
+    setDragId(id)
+    e.dataTransfer.effectAllowed = 'move'
+    e.dataTransfer.setData('text/plain', id)
+  }, [])
+
+  const onDragEnd = useCallback(() => {
+    setDragId(null)
+    setOverIndex(null)
+  }, [])
+
+  const onDragOver = useCallback((e: DragEvent, index: number) => {
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'move'
+    setOverIndex(index)
+  }, [])
+
+  const onDrop = useCallback(
+    (e: DragEvent, dropIndex: number) => {
+      e.preventDefault()
+      const id = e.dataTransfer.getData('text/plain') || dragId
+      if (!id) return
+      setOrder((prev) => reorderDrag(prev, id, dropIndex))
+      setDragId(null)
+      setOverIndex(null)
+      setStatus('idle')
+    },
+    [dragId],
+  )
+
   return (
     <section className="chronology card-surface" aria-labelledby="chronology-title">
       <div className="chronology__head">
@@ -97,33 +130,56 @@ export function ChronologyMission({ events, language }: Props) {
           <p className="chronology__badge chip chip--success">{t('timeline.chronology.completed')}</p>
         ) : null}
       </div>
-      <ol className="chronology__list">
-        {items.map((ev, index) => (
-          <li key={ev.id} className="chronology__row">
-            <div className="chronology__card">
-              <span className="chronology__year" aria-hidden>
-                ?
-              </span>
-              <div className="chronology__body">
-                <p className="chronology__event-title">{pickLocalized(language, ev.title)}</p>
-                <p className="chronology__hint">{t('timeline.chronology.hiddenYear')}</p>
-              </div>
-            </div>
-            <div className="chronology__controls">
-              <button type="button" className="btn btn--ghost btn--icon" onClick={() => move(index, -1)} disabled={index === 0}>
-                ↑
-              </button>
-              <button
-                type="button"
-                className="btn btn--ghost btn--icon"
-                onClick={() => move(index, 1)}
-                disabled={index === items.length - 1}
+      <ol className="chronology__list chronology__list--drag">
+        {items.map((ev, index) => {
+          const dragging = dragId === ev.id
+          const over = overIndex === index && dragId !== ev.id
+          return (
+            <li
+              key={ev.id}
+              className={[
+                'chronology__row',
+                dragging ? 'chronology__row--dragging' : '',
+                over ? 'chronology__row--drop-target' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+              onDragOver={(e) => onDragOver(e, index)}
+              onDrop={(e) => onDrop(e, index)}
+              onDragLeave={() => setOverIndex((o) => (o === index ? null : o))}
+            >
+              <div
+                className="chronology__card"
+                draggable
+                onDragStart={(e) => onDragStart(e, ev.id)}
+                onDragEnd={onDragEnd}
+                tabIndex={0}
+                aria-grabbed={dragging}
+                aria-label={t('timeline.chronology.dragHandle', { title: pickLocalized(language, ev.title) })}
               >
-                ↓
-              </button>
-            </div>
-          </li>
-        ))}
+                {ev.image ? (
+                  <span className="chronology__thumb">
+                    <img src={ev.image} alt="" width={88} height={66} loading="lazy" decoding="async" />
+                  </span>
+                ) : (
+                  <span className="chronology__thumb chronology__thumb--empty" aria-hidden>
+                    ·
+                  </span>
+                )}
+                <span className="chronology__year" aria-hidden>
+                  ?
+                </span>
+                <div className="chronology__body">
+                  <p className="chronology__event-title">{pickLocalized(language, ev.title)}</p>
+                  <p className="chronology__hint">{t('timeline.chronology.hiddenYear')}</p>
+                </div>
+                <span className="chronology__grip" aria-hidden>
+                  ⋮⋮
+                </span>
+              </div>
+            </li>
+          )
+        })}
       </ol>
       <div className="chronology__actions">
         <button type="button" className="btn btn--primary" onClick={checkOrder}>

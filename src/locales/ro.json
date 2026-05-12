@@ -9,7 +9,7 @@
     "home": "Acasă",
     "halls": "Săli",
     "timeline": "Cronologie",
-    "quiz": "Quiz",
+    "quiz": "Chestionar",
     "cabinet": "Cabinet",
     "games": "Jocuri"
   },
@@ -19,9 +19,10 @@
     "titleLine2": "Bălți și regiunea",
     "subtitle": "Parcurs gamificat: săli, exponate, cronologie și misiuni — totul în browser, cu progres salvat local pe dispozitiv.",
     "featuredLabel": "Despre proiect",
-    "featuredTitle": "Identitate vizuală inspirată de muzeu, temă clară sau întunecată, trei limbi (română, rusă, engleză) și structură pregătită pentru conținut.",
+    "featuredTitle": "Stații interactive: explorezi sălile, rezolvi misiunea pe cronologie, joci memoria cu fotografii din Bălți și colecționezi insigne — lumină de muzeu (temă clară sau întunecată), etichete în română, rusă sau engleză.",
     "ctaHalls": "Explorează sălile",
-    "ctaTimeline": "Deschide cronologia"
+    "ctaTimeline": "Deschide cronologia",
+    "ctaGames": "Memorie — perechi"
   },
   "footer": {
     "tagline": "Aplicație de laborator — exclusiv în browser, fără server.",
@@ -114,7 +115,7 @@
   "timeline": {
     "eyebrow": "Cronologie",
     "title": "Axa timpului regională",
-    "intro": "Glisează banda, deschide fișa fiecărui eveniment, apoi încearcă misiunea de ordonare. Anii următoresc istoriografia uzuală a Basarabiei / Moldovei.",
+    "intro": "Glisează banda, deschide fișa fiecărui eveniment, apoi încearcă misiunea de ordonare. Anii următoresc istoriografia consacrată a Basarabiei și a Republicii Moldova.",
     "rail": {
       "hint": "Scroll orizontal — punctele snap țin fiecare card la o lățime confortabilă."
     },
@@ -124,21 +125,22 @@
     },
     "chronology": {
       "title": "Misiune: anii în șir",
-      "lede": "Anii sunt ascunși. Folosește ↑ / ↓ pentru a sorta de la cel mai vechi la cel mai nou, apoi verifică.",
+      "lede": "Anii rămân ascunși. Trage cardurile (apasă și menține pe rând) până când povestea merge de la cel mai vechi moment la cel mai nou, apoi apeși „Verifică ordinea”.",
       "completed": "Misiune îndeplinită",
-      "hiddenYear": "Anul rămâne ascuns până termini misiunea.",
+      "hiddenYear": "În timpul sortării, anul rămâne mascat ca „?”.",
       "check": "Verifică ordinea",
       "reshuffle": "Amestecă din nou",
+      "dragHandle": "Reordonare: {{title}}",
       "liveSuccess": "Ordine cronologică corectă.",
-      "liveFail": "Încă nu e ordinea istorică — ajustează și încearcă din nou.",
-      "feedbackOk": "Perfect — insigna de cronolog se poate debloca în cabinet.",
-      "feedbackBad": "Unele evenimente sunt încă în afara ordinii. Indiciu: începe cu târgul (sec. XVI) și termină cu Constituția din 1994."
+      "liveFail": "Încă nu e ordinea istorică — trage cardurile și încearcă din nou.",
+      "feedbackOk": "Foarte bine — insigna «Cronolog» se poate debloca în cabinet.",
+      "feedbackBad": "Unele carduri sunt încă în afara ordinii. Indiciu: începe cu târgul (sec. XVI) și termină cu Constituția din 1994."
     }
   },
   "quiz": {
     "eyebrow": "Verificare",
-    "title": "Quizuri de muzeu",
-    "intro": "Câte 5 întrebări, feedback imediat cu explicație scurtă. Poți salva un pseudonim în topul local de 5.",
+    "title": "Chestionare muzeale",
+    "intro": "Câte 5 întrebări, feedback imediat cu explicație scurtă. Poți salva un pseudonim în clasamentul local (top 5).",
     "tablistLabel": "Alege quizul",
     "progress": "Întrebarea {{current}} din {{total}}",
     "doneTitle": "Serie încheiată",
@@ -149,48 +151,37 @@
   "cabinet": {
     "eyebrow": "Progresul tău",
     "title": "Cabinetul exploratorului",
-    "intro": "Insignele se deblochează din cronologie, quizuri și mini-jocuri. Clasamentele rămân doar pe acest dispozitiv.",
+    "intro": "Insignele se deblochează din cronologie, din chestionare și din jocul de memorie. Clasamentele rămân doar pe acest dispozitiv.",
     "refresh": "Actualizează progresul",
     "gotoQuiz": "La quizuri",
     "gotoGames": "Mini-jocuri",
     "gotoTimeline": "Cronologie",
     "statsTitle": "Recorduri quiz",
-    "statUrban": "Quiz Bălți urban — cel mai bun {{n}} / 5",
-    "statRegion": "Quiz regional — cel mai bun {{n}} / 5",
+    "statUrban": "Chestionar Bălți urban — cel mai bun {{n}} / 5",
+    "statRegion": "Chestionar regional — cel mai bun {{n}} / 5",
     "badgesTitle": "Cabinet insigne",
     "lockedHint": "Completează misiunile din alte secțiuni pentru a debloca insigna."
   },
   "games": {
     "eyebrow": "Joacă",
     "title": "Mini-jocuri",
-    "intro": "Memorie cu imagini din Bălți, plus vânătoare de „comori” ascunse pe fotografia pieței.",
-    "tabMatch": "Perechi",
-    "tabRelic": "Comori ascunse",
+    "intro": "Un joc scurt de memorie cu fotografii din Bălți: potrivește perechile, îmbunătățește numărul de mutări și, dacă dorești, salvează un pseudonim în topul local de 5.",
     "match": {
       "moves": "Mutări: {{count}}",
       "win": "Toate perechile găsite!",
       "gridLabel": "Carduri memorie"
-    },
-    "relic": {
-      "lede": "Trei zone discrete se ascund pe fotografia pieței. Ai 45 de secunde după Start.",
-      "start": "Start vânătoare",
-      "tryAgain": "Încearcă din nou",
-      "timer": "{{s}} s rămase",
-      "win": "Toate comorile găsite",
-      "hotspot": "Caută comoara"
     }
   },
   "leaderboard": {
     "title": "Top local (max. 5)",
-    "note": "Scorurile nu părăsesc browserul. Introdu un pseudoscurt după quiz sau joc.",
+    "note": "Scorurile nu părăsesc browserul. Introdu un pseudonim după chestionar sau joc.",
     "pseudonymLabel": "Pseudonim (2–24 caractere)",
     "pseudonymPlaceholder": "ex. Muzeograf_01",
     "save": "Salvează în clasament",
     "saved": "Salvat",
     "empty": "Încă nu există scoruri — joacă mai întâi.",
-    "blockQuizUrban": "Quiz — Bălți urban",
-    "blockQuizRegion": "Quiz — regiune",
-    "blockMatch": "Memorie perechi",
-    "blockRelic": "Comori ascunse"
+    "blockQuizUrban": "Chestionar — Bălți urban",
+    "blockQuizRegion": "Chestionar — regiune",
+    "blockMatch": "Memorie — perechi"
   }
 }

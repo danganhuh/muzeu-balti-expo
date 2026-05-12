@@ -19,9 +19,10 @@
     "titleLine2": "Bălți and the region",
     "subtitle": "A gamified path through halls, exhibits, timelines, and missions — all in the browser, with progress saved locally on your device.",
     "featuredLabel": "About the project",
-    "featuredTitle": "Museum-inspired visual identity, light or dark theme, three interface languages (Romanian, Russian, English), and a structure ready for content.",
+    "featuredTitle": "Hands-on stations: explore halls, solve the timeline mission, play the memory game, and collect badges — with calm museum lighting, a clear or dark theme, and Romanian, Russian, or English labels.",
     "ctaHalls": "Explore the halls",
-    "ctaTimeline": "Open the timeline"
+    "ctaTimeline": "Open the timeline",
+    "ctaGames": "Play memory pairs"
   },
   "footer": {
     "tagline": "Course lab app — client-side only, no server.",
@@ -114,7 +115,7 @@
   "timeline": {
     "eyebrow": "Chronology",
     "title": "Regional timeline",
-    "intro": "Scroll the rail, open each event sheet, then try the ordering mission. Dates follow mainstream Bessarabia / Moldova histories.",
+    "intro": "Scroll the rail, open each event sheet, then try the ordering mission. Dates follow the mainstream narrative of Bessarabia and the Republic of Moldova.",
     "rail": {
       "hint": "Scroll horizontally — snap points keep each year card readable."
     },
@@ -124,15 +125,16 @@
     },
     "chronology": {
       "title": "Mission: years in order",
-      "lede": "Years are hidden. Use ↑ / ↓ to sort oldest → newest, then check.",
+      "lede": "Years stay hidden. Drag the cards (grab the row) until the story runs from the oldest moment to the newest, then tap “Check order”.",
       "completed": "Mission completed",
-      "hiddenYear": "Year hidden until you finish the mission.",
+      "hiddenYear": "While sorting, the year stays masked as “?”.",
       "check": "Check order",
       "reshuffle": "Shuffle again",
+      "dragHandle": "Reorder: {{title}}",
       "liveSuccess": "Correct chronological order.",
-      "liveFail": "Not yet in historical order — adjust and try again.",
-      "feedbackOk": "Perfect — the rail now unlocks the chronologist badge if you have not earned it yet.",
-      "feedbackBad": "Some events are still out of order. Tip: start with the fair (16th c.) and end with the 1994 constitution."
+      "liveFail": "Not yet in historical order — drag cards and try again.",
+      "feedbackOk": "Well done — your explorer badge for this mission can unlock in the cabinet.",
+      "feedbackBad": "Some cards are still out of sequence. Clue: begin with the 16th-century fair and end with the 1994 constitution."
     }
   },
   "quiz": {
@@ -149,7 +151,7 @@
   "cabinet": {
     "eyebrow": "Your progress",
     "title": "Explorer cabinet",
-    "intro": "Badges unlock from the timeline, quizzes, and mini-games. Leaderboards stay only on this device.",
+    "intro": "Badges unlock from the timeline, quizzes, and the memory game. Leaderboards stay only on this device.",
     "refresh": "Refresh progress",
     "gotoQuiz": "Go to quizzes",
     "gotoGames": "Mini-games",
@@ -163,21 +165,11 @@
   "games": {
     "eyebrow": "Playful desk",
     "title": "Mini-games",
-    "intro": "Memory pairs with Bălți imagery, plus a timed hidden-relic hunt on Independence Square.",
-    "tabMatch": "Match pairs",
-    "tabRelic": "Hidden relics",
+    "intro": "A short memory game with photographs from Bălți — match pairs, beat your move count, and optionally save a nickname to the local top five.",
     "match": {
       "moves": "Moves: {{count}}",
       "win": "All pairs found!",
       "gridLabel": "Memory cards"
-    },
-    "relic": {
-      "lede": "Three translucent hotspots hide on the square photo. You have 45 seconds after you press Start.",
-      "start": "Start hunt",
-      "tryAgain": "Try again",
-      "timer": "{{s}} s left",
-      "win": "All relics found",
-      "hotspot": "Search for relic"
     }
   },
   "leaderboard": {
@@ -190,7 +182,6 @@
     "empty": "No scores yet — play first.",
     "blockQuizUrban": "Quiz — Bălți urban",
     "blockQuizRegion": "Quiz — region",
-    "blockMatch": "Memory pairs",
-    "blockRelic": "Hidden relics"
+    "blockMatch": "Memory pairs"
   }
 }

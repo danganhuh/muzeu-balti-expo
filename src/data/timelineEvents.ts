@@ -1,12 +1,5 @@
 import type { TimelineEvent } from '../types/interactive'
-import {
-  remoteExhibitHeroes,
-  remoteTimelineIndependenceRally,
-  remoteTimelineParliament,
-  remoteTimelineRailMap,
-  remoteTimelineSovietStamp,
-  remoteTimelineStephen,
-} from './remoteMedia'
+import { remoteTimelineThumbs } from './remoteMedia'
 
 /**
  * Years and political facts are aligned with mainstream histories of Bessarabia / Moldova.
@@ -17,7 +10,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
     id: 'evt-balti-fair-1588',
     year: 1588,
     era: 'early_modern',
-    image: remoteExhibitHeroes.marketSquare,
+    image: remoteTimelineThumbs.fair,
     relatedExhibitIds: ['exhibit-market-square'],
     title: {
       ro: 'Atestarea târgului la Bălți',
@@ -30,7 +23,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
       en: 'Written sources record a fair at the settlement — the start of a stable marketplace for the region.',
     },
     detail: {
-      ro: 'Cronologia urbană a Bălților folosește frecvent anul 1588 ca primă atestare documentară a târgului. Nu confundăm acest moment cu fondarea „orașului modern”: e un reper al comerțului și vieții publice locale, ancorat în epoca principatelor românești.',
+      ro: 'Cronologia urbană a orașului Bălți folosește frecvent anul 1588 ca primă atestare documentară a târgului. Nu confundăm acest moment cu fondarea „orașului modern”: este un reper al comerțului și al vieții publice locale, ancorat în epoca principatelor românești.',
       ru: 'Городская хронология Бельц часто отсчитывает от 1588 года как от первого документального упоминания ярмарки. Это не тождественно «основанию современного города»: это веха торговой и общественной жизни региона в эпоху княжеств.',
       en: 'Urban chronicles of Bălți often cite 1588 as the first documentary mention of the fair. This is not the same as the founding of the “modern city”: it marks trade and public life in the Romanian principalities era.',
     },
@@ -39,7 +32,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
     id: 'evt-bessarabia-1812',
     year: 1812,
     era: 'early_modern',
-    image: remoteTimelineRailMap,
+    image: remoteTimelineThumbs.rail,
     relatedExhibitIds: ['exhibit-prut-coins', 'exhibit-stamp-tax'],
     title: {
       ro: 'Basarabia în Imperiul Rus (1812)',
@@ -61,11 +54,11 @@ export const timelineEvents: readonly TimelineEvent[] = [
     id: 'evt-union-1918',
     year: 1918,
     era: 'modern',
-    image: remoteTimelineStephen,
+    image: remoteTimelineThumbs.street,
     relatedExhibitIds: ['exhibit-street-facade', 'exhibit-letters-stage'],
     title: {
       ro: 'Unirea Basarabiei cu România',
-      ru: 'Объединение Бессарабии с Румынией',
+      ru: 'Присоединение Бессарабии к Румынии',
       en: 'Bessarabia votes to unite with Romania',
     },
     summary: {
@@ -75,7 +68,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
     },
     detail: {
       ro: 'La 27 martie/stil vechi (9 aprilie stil nou) 1918, deputații din Chișinău votează unirea. În practică, integrarea administrativă și culturală s-a făcut în timp; pentru Bălți, perioada interbelică înseamnă dezvoltare urbană și legături mai strânse cu rețeaua românească.',
-      ru: '27 марта (9 апреля) 1918 года депутаты в Кишинёве голосуют за соединение. Для Бельц межвоенный период — это рост города и более тесные связи с румынской сетью.',
+      ru: '27 марта (9 апреля) 1918 года депутаты в Кишинёве проголосовали за присоединение к Румынии. Для Бельц межвоенный период — это рост города и более тесные связи с румынской административной и культурной средой.',
       en: 'On 27 March (Old Style) / 9 April (New Style) 1918, deputies in Chișinău vote for union. For Bălți, the interwar years mean urban growth and closer ties to the Romanian network.',
     },
   },
@@ -83,7 +76,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
     id: 'evt-soviet-1940',
     year: 1940,
     era: 'modern',
-    image: remoteTimelineSovietStamp,
+    image: remoteTimelineThumbs.stamp,
     relatedExhibitIds: ['exhibit-stamp-tax', 'exhibit-school-photo'],
     title: {
       ro: 'Ultimatumul sovietic și schimbarea statului (1940)',
@@ -105,7 +98,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
     id: 'evt-moldova-independence-1991',
     year: 1991,
     era: 'contemporary',
-    image: remoteTimelineIndependenceRally,
+    image: remoteTimelineThumbs.flag,
     relatedExhibitIds: ['exhibit-letters-stage'],
     title: {
       ro: 'Independența Republicii Moldova',
@@ -127,7 +120,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
     id: 'evt-constitution-1994',
     year: 1994,
     era: 'contemporary',
-    image: remoteTimelineParliament,
+    image: remoteTimelineThumbs.bank,
     relatedExhibitIds: ['exhibit-stamp-tax'],
     title: {
       ro: 'Constituția Republicii Moldova',
@@ -140,7 +133,7 @@ export const timelineEvents: readonly TimelineEvent[] = [
       en: 'On 29 July 1994, the constitution of the modern state enters into force.',
     },
     detail: {
-      ro: 'Adoptată prin referendum, Constituția din 1994 definește statul Republica Moldova, separația puterilor și drepturile fundamentale. Este punctul de referință juridic pentru viața politică post-sovietică, inclusiv pentru administrația locală a municipiilor precum Bălți.',
+      ro: 'Adoptată prin referendum, Constituția din 1994 definește Republica Moldova ca stat suveran, separația puterilor și drepturile fundamentale. Este reperul juridic principal al vieții politice post-sovietice, inclusiv pentru administrația locală a municipiilor precum Bălți.',
       ru: 'Принятая на референдуме Конституция 1994 года определяет Республику Молдова, разделение властей и права. Это базовый правовой ориентир для постсоветского периода, включая местное самоуправление в Бельцах.',
       en: 'Adopted by referendum, the 1994 constitution defines the Republic of Moldova, separation of powers, and fundamental rights. It is the legal backbone of post-Soviet politics, including local government in Bălți.',
     },

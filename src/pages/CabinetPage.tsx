@@ -36,7 +36,6 @@ export function CabinetPage() {
       { key: LEADERBOARD_KEYS.quizUrban, title: t('leaderboard.blockQuizUrban') },
       { key: LEADERBOARD_KEYS.quizRegion, title: t('leaderboard.blockQuizRegion') },
       { key: LEADERBOARD_KEYS.matchPairs, title: t('leaderboard.blockMatch') },
-      { key: LEADERBOARD_KEYS.hiddenRelic, title: t('leaderboard.blockRelic') },
     ],
     [t],
   )

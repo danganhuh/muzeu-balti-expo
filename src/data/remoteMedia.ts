@@ -88,21 +88,17 @@ export const remotePortrait = {
   merchantCoins: portraitMerchantTrade,
 } as const
 
-/** Timeline — Ștefan cel Mare street, Bălți (interwar / urban memory). File: Str. Ștefan cel Mare din Bălți.JPG */
-export const remoteTimelineStephen = hallFacesCover
-
-/** Timeline — Chișinău Parliament / government (state institutions). File: Parlamentul Republicii Moldova - panoramio.jpg */
-export const remoteTimelineParliament =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Parlamentul_Republicii_Moldova_-_panoramio.jpg/960px-Parlamentul_Republicii_Moldova_-_panoramio.jpg'
-
-/** Timeline — Flag of Moldova (1991 independence / state symbols). File: Flag_of_Moldova.svg */
-export const remoteTimelineIndependenceRally =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Moldova.svg/640px-Flag_of_Moldova.svg.png'
-
-/** Timeline — Soviet stamp (1940 era context). File: Stamp of USSR 071-1940.jpg */
-export const remoteTimelineSovietStamp =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Stamp_of_USSR_071-1940.jpg/960px-Stamp_of_USSR_071-1940.jpg'
-
-/** Timeline — Iași–Chișinău railway map fragment (late 19th c. connectivity; regional rail history). File: Harta CFR 1897.jpg */
-export const remoteTimelineRailMap =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Harta_CFR_1897.jpg/960px-Harta_CFR_1897.jpg'
+/**
+ * Timeline / chronology images. Commons rejects arbitrary thumb widths (e.g. 400px); reuse
+ * working exhibit URLs where possible. CSS scales them in the rail and mission cards.
+ */
+export const remoteTimelineThumbs = {
+  fair: exhibitMarketSquare,
+  /** Related exhibits use coins; historic CFR map file on Commons was unavailable. */
+  rail: exhibitPrutCoins,
+  street: hallFacesCover,
+  stamp: exhibitStampTax,
+  /** SVG-derived PNG: only certain widths are generated (330px works; 400px returns 400). */
+  flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Moldova.svg/330px-Flag_of_Moldova.svg.png',
+  bank: exhibitStreetFacade,
+} as const
