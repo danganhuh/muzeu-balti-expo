@@ -10,7 +10,7 @@ export const halls: readonly Hall[] = [
       ru: 'Старый Бельцы: улицы и рынки',
       en: 'Old Bălți: streets and markets',
     },
-    coverImage: '/images/placeholders/hall.svg',
+    coverImage: 'images/placeholders/hall.svg',
   },
   {
     id: 'hall-crafts',
@@ -21,7 +21,7 @@ export const halls: readonly Hall[] = [
       ru: 'Ремёсла и мастерские',
       en: 'Crafts and workshops',
     },
-    coverImage: '/images/placeholders/hall.svg',
+    coverImage: 'images/placeholders/hall.svg',
   },
   {
     id: 'hall-coins',
@@ -32,7 +32,7 @@ export const halls: readonly Hall[] = [
       ru: 'Монеты и торговля на Пруте',
       en: 'Coins and trade on the Prut',
     },
-    coverImage: '/images/placeholders/hall.svg',
+    coverImage: 'images/placeholders/hall.svg',
   },
   {
     id: 'hall-faces',
@@ -43,6 +43,6 @@ export const halls: readonly Hall[] = [
       ru: 'Лица города',
       en: 'Faces of the city',
     },
-    coverImage: '/images/placeholders/hall.svg',
+    coverImage: 'images/placeholders/hall.svg',
   },
 ]
