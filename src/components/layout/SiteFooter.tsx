@@ -6,10 +6,10 @@ export function SiteFooter() {
 
   return (
     <footer className="site-footer">
-      <div className="container">
+      <div className="container footer__inner">
         <p className="footer-tagline">{t('footer.tagline')}</p>
         <p className="footer-copy">
-          © {year} {t('app.name')} — {t('footer.demo')}
+          © {year} {t('app.name')}. {t('footer.storageNote')}
         </p>
       </div>
     </footer>

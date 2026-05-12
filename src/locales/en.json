@@ -15,15 +15,15 @@
     "eyebrow": "Interactive exhibition",
     "titleLine1": "Showcase of Time",
     "titleLine2": "Bălți and the region",
-    "subtitle": "A gamified journey through halls, exhibits, timelines, and missions — all in the browser, with progress saved locally.",
-    "featuredLabel": "PR1 demo",
-    "featuredTitle": "Visual identity, theme, RO/RU/EN language, and routing ready for content.",
+    "subtitle": "A gamified path through halls, exhibits, timelines, and missions — all in the browser, with progress saved locally on your device.",
+    "featuredLabel": "About the project",
+    "featuredTitle": "Museum-inspired visual identity, light or dark theme, three interface languages (Romanian, Russian, English), and a structure ready for content.",
     "ctaHalls": "Explore the halls",
     "ctaTimeline": "Open the timeline"
   },
   "footer": {
-    "tagline": "Front-end lab — client only, no server.",
-    "demo": "navigable demo"
+    "tagline": "Course lab app — client-side only, no server.",
+    "storageNote": "Your progress stays saved locally on this device."
   },
   "theme": {
     "light": "Light",
@@ -42,6 +42,6 @@
     "titleTimeline": "Timeline",
     "titleQuiz": "Quiz",
     "titleCabinet": "Explorer cabinet",
-    "body": "This section will be filled in during the next project phases. Use the menu to return home."
+    "body": "Content for this section will be added in later stages. Use the menu to return to the home page."
   }
 }

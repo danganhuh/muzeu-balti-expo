@@ -14,16 +14,16 @@
   "home": {
     "eyebrow": "Expoziție interactivă",
     "titleLine1": "Vitrina Timpului",
-    "titleLine2": "Bălți și regiune",
-    "subtitle": "Parcurs gamificat: săli, exponate, cronologie și misiuni — totul în browser, cu progres salvat local.",
-    "featuredLabel": "Demo PR1",
-    "featuredTitle": "Identitate vizuală, temă, limbă RO/RU/EN și rutare pregătite pentru conținut.",
+    "titleLine2": "Bălți și regiunea",
+    "subtitle": "Parcurs gamificat: săli, exponate, cronologie și misiuni — totul în browser, cu progres salvat local pe dispozitiv.",
+    "featuredLabel": "Despre proiect",
+    "featuredTitle": "Identitate vizuală inspirată de muzeu, temă clară sau întunecată, trei limbi (română, rusă, engleză) și structură pregătită pentru conținut.",
     "ctaHalls": "Explorează sălile",
     "ctaTimeline": "Deschide cronologia"
   },
   "footer": {
-    "tagline": "Laborator front-end — client only, fără server.",
-    "demo": "demo navigabil"
+    "tagline": "Aplicație de laborator — exclusiv în browser, fără server.",
+    "storageNote": "Progresul tău rămâne salvat local pe acest dispozitiv."
   },
   "theme": {
     "light": "Luminos",
@@ -42,6 +42,6 @@
     "titleTimeline": "Cronologie",
     "titleQuiz": "Quiz",
     "titleCabinet": "Cabinetul exploratorului",
-    "body": "Această zonă va fi completată în următoarele etape ale proiectului. Poți folosi meniul pentru a reveni la pagina principală."
+    "body": "Conținutul acestei secțiuni va fi adăugat în etapele următoare. Folosește meniul pentru a reveni la pagina principală."
   }
 }
