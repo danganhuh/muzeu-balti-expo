@@ -133,7 +133,7 @@ export function ChronologyMission({ events, language }: Props) {
           {t('timeline.chronology.reshuffle')}
         </button>
       </div>
-      <div role="status" aria-live="polite" className="chronology__live">
+      <div role="status" aria-live="polite" className="sr-only">
         {status === 'success' ? t('timeline.chronology.liveSuccess') : status === 'fail' ? t('timeline.chronology.liveFail') : '\u00a0'}
       </div>
       {status === 'success' ? (

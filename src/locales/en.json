@@ -10,7 +10,8 @@
     "halls": "Halls",
     "timeline": "Timeline",
     "quiz": "Quiz",
-    "cabinet": "Cabinet"
+    "cabinet": "Cabinet",
+    "games": "Games"
   },
   "home": {
     "eyebrow": "Interactive exhibition",
@@ -109,5 +110,87 @@
       "noFunFacts": "No fun facts for this exhibit.",
       "relatedPeople": "Related personalities"
     }
+  },
+  "timeline": {
+    "eyebrow": "Chronology",
+    "title": "Regional timeline",
+    "intro": "Scroll the rail, open each event sheet, then try the ordering mission. Dates follow mainstream Bessarabia / Moldova histories.",
+    "rail": {
+      "hint": "Scroll horizontally — snap points keep each year card readable."
+    },
+    "sheet": {
+      "close": "Close",
+      "related": "Related exhibits"
+    },
+    "chronology": {
+      "title": "Mission: years in order",
+      "lede": "Years are hidden. Use ↑ / ↓ to sort oldest → newest, then check.",
+      "completed": "Mission completed",
+      "hiddenYear": "Year hidden until you finish the mission.",
+      "check": "Check order",
+      "reshuffle": "Shuffle again",
+      "liveSuccess": "Correct chronological order.",
+      "liveFail": "Not yet in historical order — adjust and try again.",
+      "feedbackOk": "Perfect — the rail now unlocks the chronologist badge if you have not earned it yet.",
+      "feedbackBad": "Some events are still out of order. Tip: start with the fair (16th c.) and end with the 1994 constitution."
+    }
+  },
+  "quiz": {
+    "eyebrow": "Knowledge check",
+    "title": "Museum quizzes",
+    "intro": "Five questions each, immediate feedback with a short explanation. Save a pseudonym to the local top five if you like.",
+    "tablistLabel": "Choose a quiz",
+    "progress": "Question {{current}} / {{total}}",
+    "doneTitle": "Run complete",
+    "scoreLine": "Score: {{score}} / {{total}}",
+    "passed": "You reached the badge threshold — see the cabinet.",
+    "retryHint": "Open the other quiz or revisit the timeline, then try again."
+  },
+  "cabinet": {
+    "eyebrow": "Your progress",
+    "title": "Explorer cabinet",
+    "intro": "Badges unlock from the timeline, quizzes, and mini-games. Leaderboards stay only on this device.",
+    "refresh": "Refresh progress",
+    "gotoQuiz": "Go to quizzes",
+    "gotoGames": "Mini-games",
+    "gotoTimeline": "Timeline",
+    "statsTitle": "Quiz bests",
+    "statUrban": "Bălți urban quiz — best {{n}} / 5",
+    "statRegion": "Regional quiz — best {{n}} / 5",
+    "badgesTitle": "Badge cabinet",
+    "lockedHint": "Complete missions elsewhere to reveal this badge."
+  },
+  "games": {
+    "eyebrow": "Playful desk",
+    "title": "Mini-games",
+    "intro": "Memory pairs with Bălți imagery, plus a timed hidden-relic hunt on Independence Square.",
+    "tabMatch": "Match pairs",
+    "tabRelic": "Hidden relics",
+    "match": {
+      "moves": "Moves: {{count}}",
+      "win": "All pairs found!",
+      "gridLabel": "Memory cards"
+    },
+    "relic": {
+      "lede": "Three translucent hotspots hide on the square photo. You have 45 seconds after you press Start.",
+      "start": "Start hunt",
+      "tryAgain": "Try again",
+      "timer": "{{s}} s left",
+      "win": "All relics found",
+      "hotspot": "Search for relic"
+    }
+  },
+  "leaderboard": {
+    "title": "Local hall of fame (top 5)",
+    "note": "Scores never leave your browser. Enter a short pseudonym after a quiz or game.",
+    "pseudonymLabel": "Pseudonym (2–24 characters)",
+    "pseudonymPlaceholder": "e.g. Muzeograf_01",
+    "save": "Save to leaderboard",
+    "saved": "Saved",
+    "empty": "No scores yet — play first.",
+    "blockQuizUrban": "Quiz — Bălți urban",
+    "blockQuizRegion": "Quiz — region",
+    "blockMatch": "Memory pairs",
+    "blockRelic": "Hidden relics"
   }
 }

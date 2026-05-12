@@ -4,10 +4,9 @@ import { useTranslation } from 'react-i18next'
 import type { LanguageCode } from '../types/settings'
 import { pickLocalized } from '../i18n/pickLocalized'
 import { badgeCatalog } from '../data/badges'
-import { loadBadgeIds, loadLeaderboard } from '../services/storage/interactiveStorage'
+import { loadBadgeIds, loadLeaderboard, loadQuizProgress } from '../services/storage/interactiveStorage'
 import { syncBadges } from '../services/badgeSync'
 import { LEADERBOARD_KEYS } from '../constants/leaderboards'
-import { loadQuizProgress } from '../services/storage/interactiveStorage'
 
 export function CabinetPage() {
   const { i18n, t } = useTranslation()

@@ -7,11 +7,13 @@ import { loadMatchGameProgress, saveMatchGameProgress, submitLeaderboardEntry } 
 import { LEADERBOARD_KEYS } from '../../constants/leaderboards'
 import { syncBadges } from '../../services/badgeSync'
 
+import type { LocalizedString } from '../../types/museum'
+
 type Card = {
   key: string
   pairId: string
   image: string
-  caption: { ro: string; ru: string; en: string }
+  caption: LocalizedString
 }
 
 const deckSeed: readonly Card[] = [

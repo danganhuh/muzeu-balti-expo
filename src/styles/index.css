@@ -14,6 +14,7 @@
 @import "./theme-dark.css";
 @import "./app-shell.css";
 @import "./exhibits-app.css";
+@import "./pr3-interactive.css";
 
 /* Ajustări minime pentru aplicație (peste stilul landingului) */
 #root {

@@ -4,6 +4,8 @@ import type { LanguageCode } from '../../types/settings'
 import { pickLocalized } from '../../i18n/pickLocalized'
 import type { QuizSet } from '../../types/interactive'
 import { loadQuizProgress, saveQuizProgress, submitLeaderboardEntry } from '../../services/storage/interactiveStorage'
+import { syncBadges } from '../../services/badgeSync'
+import { LEADERBOARD_KEYS } from '../../constants/leaderboards'
 
 type Props = {
   quiz: QuizSet
