@@ -1,0 +1,17 @@
+/**
+ * Design tokens (tum-web-lab2 palette + layout) — complements vendor :root.
+ * @see FEATURES-AND-PROJECT-PLAN.md §6
+ */
+:root {
+	--radius-card: 12px;
+	--shadow-card: 0 10px 24px rgba(0, 0, 0, 0.08);
+	--shadow-card-hover: 0 14px 30px rgba(0, 0, 0, 0.12);
+	--border-card: rgba(31, 26, 21, 0.12);
+	--font-display: Georgia, 'Times New Roman', Times, serif;
+}
+
+html[data-theme='dark'] {
+	--border-card: rgba(244, 239, 232, 0.12);
+	--shadow-card: 0 10px 24px rgba(0, 0, 0, 0.35);
+	--shadow-card-hover: 0 14px 32px rgba(0, 0, 0, 0.45);
+}

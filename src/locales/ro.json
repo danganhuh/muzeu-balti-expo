@@ -1,0 +1,48 @@
+{
+  "app": {
+    "name": "Bălți: Vitrina Timpului",
+    "shortName": "VitrinaTimpului",
+    "logoAlt": "Sigla Vitrina Timpului"
+  },
+  "nav": {
+    "mainLabel": "Navigare principală",
+    "home": "Acasă",
+    "halls": "Săli",
+    "timeline": "Cronologie",
+    "quiz": "Quiz",
+    "cabinet": "Cabinet"
+  },
+  "home": {
+    "eyebrow": "Expoziție interactivă",
+    "titleLine1": "Vitrina Timpului",
+    "titleLine2": "Bălți și regiunea",
+    "subtitle": "Parcurs gamificat: săli, exponate, cronologie și misiuni — totul în browser, cu progres salvat local pe dispozitiv.",
+    "featuredLabel": "Despre proiect",
+    "featuredTitle": "Identitate vizuală inspirată de muzeu, temă clară sau întunecată, trei limbi (română, rusă, engleză) și structură pregătită pentru conținut.",
+    "ctaHalls": "Explorează sălile",
+    "ctaTimeline": "Deschide cronologia"
+  },
+  "footer": {
+    "tagline": "Aplicație de laborator — exclusiv în browser, fără server.",
+    "storageNote": "Progresul tău rămâne salvat local pe acest dispozitiv."
+  },
+  "theme": {
+    "light": "Luminos",
+    "dark": "Întunecat",
+    "system": "Sistem",
+    "cycle": "Schimbă tema"
+  },
+  "lang": {
+    "groupLabel": "Limbă interfață",
+    "ro": "RO",
+    "ru": "RU",
+    "en": "EN"
+  },
+  "placeholder": {
+    "titleHalls": "Săli",
+    "titleTimeline": "Cronologie",
+    "titleQuiz": "Quiz",
+    "titleCabinet": "Cabinetul exploratorului",
+    "body": "Conținutul acestei secțiuni va fi adăugat în etapele următoare. Folosește meniul pentru a reveni la pagina principală."
+  }
+}
