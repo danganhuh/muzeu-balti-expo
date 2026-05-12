@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9a6a45"/>
+      <stop offset="100%" style="stop-color:#3d2a1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <rect x="120" y="140" width="560" height="200" rx="12" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+  <text x="400" y="245" text-anchor="middle" fill="rgba(255,255,255,.85)" font-family="Georgia,serif" font-size="28">Hall</text>
+</svg>
