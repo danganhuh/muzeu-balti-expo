@@ -1,7 +1,8 @@
 {
   "app": {
     "name": "Бельцы: Витрина времени",
-    "shortName": "VitrinaTimpului"
+    "shortName": "VitrinaTimpului",
+    "logoAlt": "Эмблема «Витрина времени»"
   },
   "nav": {
     "mainLabel": "Основная навигация",

@@ -2,6 +2,7 @@
 
 - **Plan de proiect și funcționalități (document public):** [FEATURES-AND-PROJECT-PLAN.md](./FEATURES-AND-PROJECT-PLAN.md)
 - **Stiluri:** landing `tum-web-lab2` — copii în `src/styles/vendor/`, agregate în [`src/styles/index.css`](./src/styles/index.css).
+- **Logo:** pune imaginea în [`public/images/`](./public/images/) (implicit `logo.svg` înlocuiește placeholder-ul). Dacă folosești alt nume sau extensie, actualizează `LOGO_FILE` în [`src/constants/branding.ts`](./src/constants/branding.ts).
 
 ## Dezvoltare
 

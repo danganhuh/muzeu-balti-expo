@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { logoUrl } from '../../constants/branding'
 import { ThemeToggle } from '../theme/ThemeToggle'
 import { LanguageSwitcher } from '../i18n/LanguageSwitcher'
 
@@ -13,7 +14,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container header__inner">
         <NavLink to="/" className="logo" end>
-          <img className="logo__img" src="/vite.svg" alt="" width={32} height={32} />
+          <img className="logo__img" src={logoUrl} alt={t('app.logoAlt')} width={40} height={40} />
           <span className="logo__text">{t('app.shortName')}</span>
         </NavLink>
         <nav className="nav-main" aria-label={t('nav.mainLabel')}>

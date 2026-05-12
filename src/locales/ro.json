@@ -1,7 +1,8 @@
 {
   "app": {
     "name": "Bălți: Vitrina Timpului",
-    "shortName": "VitrinaTimpului"
+    "shortName": "VitrinaTimpului",
+    "logoAlt": "Sigla Vitrina Timpului"
   },
   "nav": {
     "mainLabel": "Navigare principală",
