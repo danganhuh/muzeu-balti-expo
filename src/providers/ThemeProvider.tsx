@@ -21,8 +21,12 @@ function resolveTheme(theme: ThemeChoice): 'light' | 'dark' {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState<AppSettings>(() => loadSettings())
+  const [systemTick, setSystemTick] = useState(0)
 
-  const resolved = useMemo(() => resolveTheme(settings.theme), [settings.theme])
+  const resolved = useMemo(
+    () => resolveTheme(settings.theme),
+    [settings.theme, systemTick]
+  )
 
   useEffect(() => {
     document.documentElement.dataset.theme = resolved
@@ -31,9 +35,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (settings.theme !== 'system') return
     const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const onChange = () => {
-      document.documentElement.dataset.theme = resolveTheme('system')
-    }
+    const onChange = () => setSystemTick((n) => n + 1)
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
   }, [settings.theme])
