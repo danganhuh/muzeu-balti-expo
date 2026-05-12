@@ -55,6 +55,10 @@ html[data-theme="dark"] .exhibition-card {
 	border-color: rgba(244, 239, 232, 0.12);
 }
 
+html[data-theme="dark"] .exhibition-card--compound:hover {
+	border-color: rgba(244, 239, 232, 0.22);
+}
+
 html[data-theme="dark"] .exhibition-card__title,
 html[data-theme="dark"] .find-us__subtitle {
 	color: var(--color-ink);

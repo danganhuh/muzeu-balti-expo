@@ -221,6 +221,10 @@ html[data-theme='dark'] .event-sheet {
 	margin: 0 0 clamp(0.45rem, 2vw, 0.65rem);
 	font-size: clamp(1.25rem, 3vw, 1.45rem);
 	line-height: 1.2;
+	color: var(--color-ink, #1f1a15);
+}
+html[data-theme='dark'] .event-sheet__title {
+	color: var(--color-ink);
 }
 .event-sheet__summary {
 	font-weight: 600;
@@ -498,6 +502,7 @@ html[data-theme='dark'] .games-tabs__btn {
 	border-radius: 10px;
 	border: 1px solid var(--border-card);
 	background: #faf7f2;
+	color: var(--color-ink, #1f1a15);
 	font-weight: 600;
 	cursor: pointer;
 	transition:

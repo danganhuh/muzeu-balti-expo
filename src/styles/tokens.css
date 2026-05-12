@@ -10,6 +10,11 @@
 	--font-display: Georgia, 'Times New Roman', Times, serif;
 }
 
+html[data-theme='light'] {
+	--color-ink: #1f1a15;
+	--color-muted: #5e5650;
+}
+
 html[data-theme='dark'] {
 	--border-card: rgba(244, 239, 232, 0.12);
 	--shadow-card: 0 10px 24px rgba(0, 0, 0, 0.35);

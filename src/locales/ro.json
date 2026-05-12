@@ -34,6 +34,13 @@
     "system": "Sistem",
     "cycle": "Schimbă tema"
   },
+  "kiosk": {
+    "panelLabel": "Continuă pe telefon",
+    "joinTitle": "Continuă pe telefon",
+    "joinIntro": "Scanează acest cod QR cu telefonul sau tableta. Legătura este unică pentru această sesiune de kiosk, astfel încât grupul tău deschide același site al expoziției.",
+    "joinHint": "Folosește aplicația camerei sau un cititor QR. Funcționează pe aceeași rețea Wi‑Fi sau pe date mobile ca acest ecran.",
+    "qrAlt": "Cod QR care deschide expoziția pe dispozitivul tău"
+  },
   "lang": {
     "groupLabel": "Limbă interfață",
     "ro": "RO",

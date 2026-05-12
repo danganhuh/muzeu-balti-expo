@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
 type Props = {
-  variant?: 'compact' | 'full'
+  variant?: 'compact' | 'full' | 'inCard'
   isFavorite: boolean
   inAlbum: boolean
   isStudied: boolean
@@ -57,7 +57,12 @@ export function ExhibitActionsBar({
   onToggleStudied,
 }: Props) {
   const { t } = useTranslation()
-  const cls = variant === 'compact' ? 'exhibit-actions exhibit-actions--compact' : 'exhibit-actions'
+  const cls =
+    variant === 'inCard'
+      ? 'exhibit-actions exhibit-actions--in-card'
+      : variant === 'compact'
+        ? 'exhibit-actions exhibit-actions--compact'
+        : 'exhibit-actions'
 
   return (
     <div className={cls} role="group" aria-label={t('exhibit.actions.groupLabel')}>
