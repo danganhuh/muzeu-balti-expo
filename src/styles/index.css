@@ -1,0 +1,18 @@
+/**
+ * Temă vizuală: copii locale din proiectul static tum-web-lab2 (landing muzeu).
+ * Sursă originală: University/WP/tum-web-lab2 — reset.css, style.css, exhibition-cards.css, mission-section.css
+ * Import unic în aplicație: import './styles/index.css' (ex. în main.tsx după inițializarea Vite).
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@import "./vendor/tum-web-lab2-reset.css";
+@import "./vendor/tum-web-lab2-style.css";
+@import "./vendor/tum-web-lab2-exhibition-cards.css";
+@import "./vendor/tum-web-lab2-mission-section.css";
+@import "./theme-dark.css";
+
+/* Ajustări minime pentru aplicație (peste stilul landingului) */
+#root {
+	min-height: 100%;
+}

@@ -1,0 +1,97 @@
+/**
+ * Mod întunecat — aceeași familie cromatică ca în planul proiectului (nu neon).
+ * Activare: <html data-theme="dark"> sau class pe root, după implementarea toggle-ului.
+ */
+
+html[data-theme="dark"] {
+	--color-bg: #141210;
+	--color-ink: #f4efe8;
+	--color-muted: #b9b2a8;
+	--color-accent: #c9a27a;
+	--color-accent-2: #3d3530;
+}
+
+html[data-theme="dark"] body {
+	color: var(--color-ink);
+	background: var(--color-bg);
+}
+
+html[data-theme="dark"] .site-header {
+	background: #1c1916;
+	border-bottom-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .logo,
+html[data-theme="dark"] .nav__list a {
+	color: rgba(244, 239, 232, 0.92);
+}
+
+html[data-theme="dark"] .nav__list a:hover {
+	color: #fff;
+	border-bottom-color: rgba(244, 239, 232, 0.45);
+}
+
+html[data-theme="dark"] .exhibitions,
+html[data-theme="dark"] .visits {
+	background: #1a1714;
+}
+
+html[data-theme="dark"] .exhibitions__title,
+html[data-theme="dark"] .visits__title,
+html[data-theme="dark"] .mission__title,
+html[data-theme="dark"] .find-us__title {
+	color: var(--color-ink);
+}
+
+html[data-theme="dark"] .exhibitions__intro,
+html[data-theme="dark"] .visits__text,
+html[data-theme="dark"] .mission__text,
+html[data-theme="dark"] .find-us__text {
+	color: var(--color-muted);
+}
+
+html[data-theme="dark"] .exhibition-card {
+	background: #1c1916;
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .exhibition-card__title,
+html[data-theme="dark"] .find-us__subtitle {
+	color: var(--color-ink);
+}
+
+html[data-theme="dark"] .exhibition-card__desc {
+	color: var(--color-muted);
+}
+
+html[data-theme="dark"] .exhibition-card__status {
+	color: #e8d4bc;
+	background: #2a241f;
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .exhibition-card__more {
+	color: var(--color-accent);
+}
+
+html[data-theme="dark"] .mission {
+	background: #161412;
+}
+
+html[data-theme="dark"] .mission__media {
+	background: #2a241f;
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .find-us {
+	background: #161412;
+}
+
+html[data-theme="dark"] .find-us__card {
+	background: #1c1916;
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .site-footer {
+	color: var(--color-muted);
+}
