@@ -16,7 +16,8 @@ export function HallDetailPage() {
   const lang = i18n.language as LanguageCode
 
   const { filters, setEra, setCategory, setCollection } = useHallExhibitFilters(hallSlug)
-  const collections = useUserExhibitCollections()
+  const { favorites, studied, isFavorite, inAlbum, isStudied, toggleFavorite, toggleAlbum, toggleStudied } =
+    useUserExhibitCollections()
 
   const hall = hallSlug ? getHallBySlug(hallSlug) : undefined
 
@@ -29,14 +30,16 @@ export function HallDetailPage() {
   )
 
   const filtered = useMemo(() => {
+    const favSet = new Set(favorites)
+    const studiedSet = new Set(studied)
     return exhibitList.filter((e) => {
       if (filters.era !== 'all' && e.era !== filters.era) return false
       if (filters.category !== 'all' && e.category !== filters.category) return false
-      if (filters.collection === 'favorites' && !collections.isFavorite(e.id)) return false
-      if (filters.collection === 'unstudied' && collections.isStudied(e.id)) return false
+      if (filters.collection === 'favorites' && !favSet.has(e.id)) return false
+      if (filters.collection === 'unstudied' && studiedSet.has(e.id)) return false
       return true
     })
-  }, [exhibitList, filters, collections])
+  }, [exhibitList, filters, favorites, studied])
 
   if (!hallSlug || !hall) return <Navigate to="/halls" replace />
 
@@ -75,12 +78,12 @@ export function HallDetailPage() {
                 <ExhibitCard
                   exhibit={exhibit}
                   hallSlug={hall.slug}
-                  isFavorite={collections.isFavorite(exhibit.id)}
-                  inAlbum={collections.inAlbum(exhibit.id)}
-                  isStudied={collections.isStudied(exhibit.id)}
-                  onToggleFavorite={() => collections.toggleFavorite(exhibit.id)}
-                  onToggleAlbum={() => collections.toggleAlbum(exhibit.id)}
-                  onToggleStudied={() => collections.toggleStudied(exhibit.id)}
+                  isFavorite={isFavorite(exhibit.id)}
+                  inAlbum={inAlbum(exhibit.id)}
+                  isStudied={isStudied(exhibit.id)}
+                  onToggleFavorite={() => toggleFavorite(exhibit.id)}
+                  onToggleAlbum={() => toggleAlbum(exhibit.id)}
+                  onToggleStudied={() => toggleStudied(exhibit.id)}
                 />
               </div>
             ))}

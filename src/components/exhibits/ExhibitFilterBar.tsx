@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import type { LanguageCode } from '../../types/settings'
 import type { ExhibitCategoryKey, ExhibitEraKey, HallExhibitFiltersState } from '../../types/museum'
 
 type Props = {
@@ -12,8 +11,7 @@ type Props = {
 }
 
 export function ExhibitFilterBar({ filters, onEra, onCategory, onCollection, eras, categories }: Props) {
-  const { t, i18n } = useTranslation()
-  const lang = i18n.language as LanguageCode
+  const { t } = useTranslation()
 
   return (
     <div className="exhibit-filters" aria-label={t('exhibit.filters.ariaLabel')}>
@@ -29,7 +27,7 @@ export function ExhibitFilterBar({ filters, onEra, onCategory, onCollection, era
               className={['filter-chip', filters.era === era ? 'filter-chip--active' : ''].join(' ')}
               onClick={() => onEra(era)}
             >
-              {era === 'all' ? t('exhibit.filters.all') : t(`exhibit.era.${era}`, { lng: lang })}
+              {era === 'all' ? t('exhibit.filters.all') : t(`exhibit.era.${era}`)}
             </button>
           ))}
         </div>
@@ -46,14 +44,14 @@ export function ExhibitFilterBar({ filters, onEra, onCategory, onCollection, era
               className={['filter-chip', filters.category === cat ? 'filter-chip--active' : ''].join(' ')}
               onClick={() => onCategory(cat)}
             >
-              {cat === 'all' ? t('exhibit.filters.all') : t(`exhibit.category.${cat}`, { lng: lang })}
+              {cat === 'all' ? t('exhibit.filters.all') : t(`exhibit.category.${cat}`)}
             </button>
           ))}
         </div>
       </div>
       <div className="exhibit-filters__group">
         <span className="exhibit-filters__label" id="filter-coll-label">
-          {t('exhibit.filters.collection')}
+          {t('exhibit.filters.collectionHeading')}
         </span>
         <div className="exhibit-filters__scroller" role="toolbar" aria-labelledby="filter-coll-label">
           {(['all', 'favorites', 'unstudied'] as const).map((c) => (
@@ -63,7 +61,7 @@ export function ExhibitFilterBar({ filters, onEra, onCategory, onCollection, era
               className={['filter-chip', filters.collection === c ? 'filter-chip--active' : ''].join(' ')}
               onClick={() => onCollection(c)}
             >
-              {t(`exhibit.filters.collection.${c}`)}
+              {t(`exhibit.filters.collectionOptions.${c}`)}
             </button>
           ))}
         </div>

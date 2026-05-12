@@ -95,3 +95,92 @@ html[data-theme="dark"] .find-us__card {
 html[data-theme="dark"] .site-footer {
 	color: var(--color-muted);
 }
+
+html[data-theme="dark"] .section--cream {
+	background: #1a1714;
+}
+
+html[data-theme="dark"] .halls-page__eyebrow {
+	color: var(--color-accent);
+}
+
+html[data-theme="dark"] .halls-page__title,
+html[data-theme="dark"] .hall-detail__title,
+html[data-theme="dark"] .exhibit-detail__title,
+html[data-theme="dark"] .exhibit-detail__section-title,
+html[data-theme="dark"] .hall-detail__crumbs-current,
+html[data-theme="dark"] .exhibit-detail__crumbs-current {
+	color: var(--color-ink);
+}
+
+html[data-theme="dark"] .halls-page__intro,
+html[data-theme="dark"] .hall-detail__subtitle,
+html[data-theme="dark"] .hall-detail__crumbs,
+html[data-theme="dark"] .exhibit-detail__crumbs,
+html[data-theme="dark"] .exhibit-detail__lead,
+html[data-theme="dark"] .exhibit-detail__prose,
+html[data-theme="dark"] .exhibit-detail__facts,
+html[data-theme="dark"] .exhibit-detail__muted {
+	color: var(--color-muted);
+}
+
+html[data-theme="dark"] .filter-chip {
+	background: rgba(255, 255, 255, 0.06);
+	border-color: rgba(244, 239, 232, 0.18);
+	color: var(--color-ink);
+}
+
+html[data-theme="dark"] .filter-chip:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .filter-chip--active {
+	border-color: rgba(201, 162, 122, 0.45);
+}
+
+html[data-theme="dark"] .hall-detail__empty {
+	border-color: rgba(244, 239, 232, 0.2);
+	background: rgba(255, 255, 255, 0.04);
+	color: var(--color-muted);
+}
+
+html[data-theme="dark"] .exhibit-actions__btn {
+	background: rgba(255, 255, 255, 0.06);
+	border-color: rgba(244, 239, 232, 0.18);
+	color: var(--color-ink);
+}
+
+html[data-theme="dark"] .exhibit-actions__btn--on {
+	background: #2a241f;
+	border-color: rgba(201, 162, 122, 0.45);
+	color: var(--color-accent);
+}
+
+html[data-theme="dark"] .exhibit-detail__pill {
+	color: #e8d4bc;
+	background: #2a241f;
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .exhibit-detail__pill--muted {
+	color: var(--color-muted);
+	background: rgba(255, 255, 255, 0.06);
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .exhibit-person-card {
+	background: #1c1916;
+	border-color: rgba(244, 239, 232, 0.12);
+}
+
+html[data-theme="dark"] .exhibit-person-card__name {
+	color: var(--color-ink);
+}
+
+html[data-theme="dark"] .exhibit-person-card__role {
+	color: var(--color-accent);
+}
+
+html[data-theme="dark"] .exhibit-person-card__bio {
+	color: var(--color-muted);
+}

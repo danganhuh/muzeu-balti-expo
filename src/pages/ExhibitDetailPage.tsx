@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { getExhibitInHall, getHallBySlug, getPersonById } from '../data/catalog'
 import { pickLocalized, pickLocalizedList } from '../i18n/pickLocalized'
 import type { LanguageCode } from '../types/settings'
+import type { HistoricalPerson } from '../types/museum'
 import { publicUrl } from '../utils/publicUrl'
 import { ExhibitActionsBar } from '../components/exhibits/ExhibitActionsBar'
 import { useUserExhibitCollections } from '../hooks/useUserExhibitCollections'
@@ -20,7 +21,9 @@ export function ExhibitDetailPage() {
   if (!hall || !exhibit) return <Navigate to="/halls" replace />
 
   const funFacts = pickLocalizedList(lang, exhibit.funFacts)
-  const people = exhibit.relatedPersonIds.map((id) => getPersonById(id)).filter(Boolean)
+  const people: HistoricalPerson[] = exhibit.relatedPersonIds
+    .map((id) => getPersonById(id))
+    .filter((p): p is HistoricalPerson => p != null)
 
   return (
     <article className="exhibit-detail section--cream" aria-labelledby="exhibit-title">
@@ -96,25 +99,23 @@ export function ExhibitDetailPage() {
               {t('exhibit.detail.relatedPeople')}
             </h2>
             <ul className="exhibit-detail__people">
-              {people.map((p) =>
-                p ? (
-                  <li key={p.id} className="exhibit-person-card">
-                    <img
-                      className="exhibit-person-card__img"
-                      src={publicUrl(p.portraitImage)}
-                      alt=""
-                      width={120}
-                      height={150}
-                      loading="lazy"
-                    />
-                    <div className="exhibit-person-card__body">
-                      <h3 className="exhibit-person-card__name">{pickLocalized(lang, p.name)}</h3>
-                      <p className="exhibit-person-card__role">{pickLocalized(lang, p.role)}</p>
-                      <p className="exhibit-person-card__bio">{pickLocalized(lang, p.bioShort)}</p>
-                    </div>
-                  </li>
-                ) : null,
-              )}
+              {people.map((p) => (
+                <li key={p.id} className="exhibit-person-card">
+                  <img
+                    className="exhibit-person-card__img"
+                    src={publicUrl(p.portraitImage)}
+                    alt=""
+                    width={120}
+                    height={150}
+                    loading="lazy"
+                  />
+                  <div className="exhibit-person-card__body">
+                    <h3 className="exhibit-person-card__name">{pickLocalized(lang, p.name)}</h3>
+                    <p className="exhibit-person-card__role">{pickLocalized(lang, p.role)}</p>
+                    <p className="exhibit-person-card__bio">{pickLocalized(lang, p.bioShort)}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </section>
         ) : null}

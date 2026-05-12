@@ -6,25 +6,17 @@ import { pickLocalized } from '../../i18n/pickLocalized'
 import { publicUrl } from '../../utils/publicUrl'
 
 export function HallCard({ hall }: { hall: Hall }) {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const lang = i18n.language as LanguageCode
 
   return (
     <Link className="exhibition-card hall-card" to={`/halls/${hall.slug}`}>
       <img src={publicUrl(hall.coverImage)} alt="" width={360} height={192} loading="lazy" />
       <div className="exhibition-card__content">
-        <span className="exhibition-card__status">{pickLocalized(lang, { ro: 'Sală', ru: 'Зал', en: 'Hall' })}</span>
+        <span className="exhibition-card__status">{t('halls.card.badge')}</span>
         <h2 className="exhibition-card__title">{pickLocalized(lang, hall.title)}</h2>
-        <p className="exhibition-card__desc hall-card__hint">
-          {pickLocalized(lang, {
-            ro: 'Deschide exponatele acestei săli',
-            ru: 'Открыть экспонаты этого зала',
-            en: 'Open exhibits in this hall',
-          })}
-        </p>
-        <span className="exhibition-card__more">
-          {pickLocalized(lang, { ro: 'Intră', ru: 'Войти', en: 'Enter' })}
-        </span>
+        <p className="exhibition-card__desc hall-card__hint">{t('halls.card.hint')}</p>
+        <span className="exhibition-card__more">{t('halls.card.enter')}</span>
       </div>
     </Link>
   )
