@@ -87,3 +87,22 @@ export const remotePortrait = {
   architectPlans: exhibitStreetFacade,
   merchantCoins: portraitMerchantTrade,
 } as const
+
+/** Timeline — Ștefan cel Mare street, Bălți (interwar / urban memory). File: Str. Ștefan cel Mare din Bălți.JPG */
+export const remoteTimelineStephen = hallFacesCover
+
+/** Timeline — Chișinău Parliament / government (state institutions). File: Parlamentul Republicii Moldova - panoramio.jpg */
+export const remoteTimelineParliament =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Parlamentul_Republicii_Moldova_-_panoramio.jpg/960px-Parlamentul_Republicii_Moldova_-_panoramio.jpg'
+
+/** Timeline — Flag of Moldova (1991 independence / state symbols). File: Flag_of_Moldova.svg */
+export const remoteTimelineIndependenceRally =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Moldova.svg/640px-Flag_of_Moldova.svg.png'
+
+/** Timeline — Soviet stamp (1940 era context). File: Stamp of USSR 071-1940.jpg */
+export const remoteTimelineSovietStamp =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Stamp_of_USSR_071-1940.jpg/960px-Stamp_of_USSR_071-1940.jpg'
+
+/** Timeline — Iași–Chișinău railway map fragment (late 19th c. connectivity; regional rail history). File: Harta CFR 1897.jpg */
+export const remoteTimelineRailMap =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Harta_CFR_1897.jpg/960px-Harta_CFR_1897.jpg'

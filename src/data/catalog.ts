@@ -41,6 +41,14 @@ export function getExhibitInHall(hallSlug: string, exhibitId: string): Exhibit |
   return ex
 }
 
+export function getAppPathForExhibitId(exhibitId: string): string | null {
+  const ex = getExhibitById(exhibitId)
+  if (!ex) return null
+  const hall = getHallById(ex.hallId)
+  if (!hall) return null
+  return `/halls/${hall.slug}/exhibit/${ex.id}`
+}
+
 export function getPersonById(id: string): HistoricalPerson | undefined {
   return peopleById.get(id)
 }
