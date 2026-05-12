@@ -4,7 +4,7 @@ import { ThemeToggle } from '../theme/ThemeToggle'
 import { LanguageSwitcher } from '../i18n/LanguageSwitcher'
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
-  isActive ? 'nav__link nav__link--active' : 'nav__link'
+  ['nav__link', isActive ? 'nav__link--active' : ''].filter(Boolean).join(' ')
 
 export function SiteHeader() {
   const { t } = useTranslation()

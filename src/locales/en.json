@@ -1,0 +1,47 @@
+{
+  "app": {
+    "name": "Bălți: Vitrina Timpului",
+    "shortName": "VitrinaTimpului"
+  },
+  "nav": {
+    "mainLabel": "Main navigation",
+    "home": "Home",
+    "halls": "Halls",
+    "timeline": "Timeline",
+    "quiz": "Quiz",
+    "cabinet": "Cabinet"
+  },
+  "home": {
+    "eyebrow": "Interactive exhibition",
+    "titleLine1": "Showcase of Time",
+    "titleLine2": "Bălți and the region",
+    "subtitle": "A gamified journey through halls, exhibits, timelines, and missions — all in the browser, with progress saved locally.",
+    "featuredLabel": "PR1 demo",
+    "featuredTitle": "Visual identity, theme, RO/RU/EN language, and routing ready for content.",
+    "ctaHalls": "Explore the halls",
+    "ctaTimeline": "Open the timeline"
+  },
+  "footer": {
+    "tagline": "Front-end lab — client only, no server.",
+    "demo": "navigable demo"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "cycle": "Cycle theme"
+  },
+  "lang": {
+    "groupLabel": "Interface language",
+    "ro": "RO",
+    "ru": "RU",
+    "en": "EN"
+  },
+  "placeholder": {
+    "titleHalls": "Halls",
+    "titleTimeline": "Timeline",
+    "titleQuiz": "Quiz",
+    "titleCabinet": "Explorer cabinet",
+    "body": "This section will be filled in during the next project phases. Use the menu to return home."
+  }
+}

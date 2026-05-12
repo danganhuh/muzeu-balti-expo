@@ -7,7 +7,9 @@ const langs: LanguageCode[] = ['ro', 'ru', 'en']
 export function LanguageSwitcher() {
   const { t, i18n } = useTranslation()
   const setLanguage = useSetLanguage()
-  const current = i18n.language?.slice(0, 2) as LanguageCode
+  const raw = i18n.resolvedLanguage ?? i18n.language ?? 'ro'
+  const short = raw.slice(0, 2) as LanguageCode
+  const current: LanguageCode = langs.includes(short) ? short : 'ro'
 
   return (
     <div className="lang-switcher" role="group" aria-label={t('lang.groupLabel')}>
