@@ -27,7 +27,7 @@ export function ExhibitCard({
   onToggleAlbum,
   onToggleStudied,
 }: Props) {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const lang = i18n.language as LanguageCode
   const to = `/halls/${hallSlug}/exhibit/${exhibit.id}`
 
@@ -36,12 +36,10 @@ export function ExhibitCard({
       <Link className="exhibition-card" to={to}>
         <img src={publicUrl(exhibit.heroImage)} alt="" width={360} height={192} loading="lazy" />
         <div className="exhibition-card__content">
-          <span className="exhibition-card__status">
-            {pickLocalized(lang, { ro: exhibit.era, ru: exhibit.era, en: exhibit.era })}
-          </span>
+          <span className="exhibition-card__status">{t(`exhibit.era.${exhibit.era}`, { lng: lang })}</span>
           <h2 className="exhibition-card__title">{pickLocalized(lang, exhibit.title)}</h2>
           <p className="exhibition-card__desc">{pickLocalized(lang, exhibit.shortDescription)}</p>
-          <span className="exhibition-card__more">{pickLocalized(lang, { ro: 'Detalii', ru: 'Подробнее', en: 'Details' })}</span>
+          <span className="exhibition-card__more">{t('exhibit.card.more')}</span>
         </div>
       </Link>
       <ExhibitActionsBar
