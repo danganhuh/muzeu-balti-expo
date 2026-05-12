@@ -221,6 +221,10 @@ html[data-theme='dark'] .event-sheet {
 	margin: 0 0 clamp(0.45rem, 2vw, 0.65rem);
 	font-size: clamp(1.25rem, 3vw, 1.45rem);
 	line-height: 1.2;
+	color: var(--color-ink, #1f1a15);
+}
+html[data-theme='dark'] .event-sheet__title {
+	color: var(--color-ink);
 }
 .event-sheet__summary {
 	font-weight: 600;
@@ -498,6 +502,7 @@ html[data-theme='dark'] .games-tabs__btn {
 	border-radius: 10px;
 	border: 1px solid var(--border-card);
 	background: #faf7f2;
+	color: var(--color-ink, #1f1a15);
 	font-weight: 600;
 	cursor: pointer;
 	transition:
@@ -562,6 +567,24 @@ html[data-theme='dark'] .quiz-runner__explain {
 }
 
 /* Cabinet & badges */
+.cabinet-page {
+	background: linear-gradient(165deg, #efe4d3 0%, #f6efe8 42%, #ebe0d0 100%);
+}
+html[data-theme='dark'] .cabinet-page {
+	background: linear-gradient(165deg, #1a1714 0%, #141210 45%, #1c1916 100%);
+}
+.cabinet-page__header {
+	padding: clamp(1.2rem, 3vw, 1.65rem) clamp(1rem, 3vw, 1.4rem);
+	border-radius: calc(var(--radius-card) + 6px);
+	border: 1px solid rgba(139, 94, 60, 0.22);
+	background: rgba(255, 255, 255, 0.72);
+	box-shadow: 0 6px 28px rgba(31, 26, 21, 0.08);
+}
+html[data-theme='dark'] .cabinet-page__header {
+	background: rgba(40, 36, 32, 0.65);
+	border-color: rgba(201, 162, 122, 0.2);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
 .cabinet-page__actions,
 .cabinet-stats__list {
 	display: flex;
@@ -576,6 +599,14 @@ html[data-theme='dark'] .quiz-runner__explain {
 	flex-direction: column;
 	align-items: flex-start;
 }
+.cabinet-stats.card-surface {
+	border-color: rgba(139, 94, 60, 0.18);
+	background: linear-gradient(180deg, #fff 0%, #faf7f2 100%);
+}
+html[data-theme='dark'] .cabinet-stats.card-surface {
+	background: linear-gradient(180deg, #242018 0%, #1c1916 100%);
+	border-color: rgba(201, 162, 122, 0.14);
+}
 .cabinet-section__title {
 	font-family: var(--font-display);
 	font-size: 1.2rem;
@@ -589,26 +620,45 @@ html[data-theme='dark'] .quiz-runner__explain {
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 1.15rem;
+	align-items: stretch;
 }
 .badge-card {
-	border-radius: var(--radius-card);
-	border: 1px solid var(--border-card);
-	padding: 1rem;
+	border-radius: calc(var(--radius-card) + 2px);
+	border: 1px solid rgba(139, 94, 60, 0.14);
+	padding: 1.1rem 1.15rem;
 	background: #fff;
-	box-shadow: var(--shadow-card);
-	transition: transform 0.18s ease;
+	box-shadow: 0 4px 18px rgba(31, 26, 21, 0.06);
+	transition:
+		transform 0.18s ease,
+		box-shadow 0.18s ease,
+		border-color 0.18s ease;
+	display: flex;
+	flex-direction: column;
+	min-height: 10.75rem;
 }
 .badge-card:hover {
 	transform: translateY(-2px);
+	box-shadow: 0 10px 26px rgba(31, 26, 21, 0.1);
+}
+.badge-card--owned {
+	border-color: rgba(139, 94, 60, 0.42);
+	box-shadow:
+		0 0 0 1px rgba(139, 94, 60, 0.12),
+		0 8px 28px rgba(139, 94, 60, 0.12);
 }
 .badge-card--locked {
-	opacity: 0.72;
-	filter: grayscale(0.25);
+	opacity: 0.78;
+	filter: grayscale(0.2);
 }
 html[data-theme='dark'] .badge-card {
 	background: #1c1916;
+	border-color: rgba(244, 239, 232, 0.1);
+}
+html[data-theme='dark'] .badge-card--owned {
+	border-color: rgba(201, 162, 122, 0.45);
+	box-shadow: 0 0 0 1px rgba(201, 162, 122, 0.12), 0 8px 28px rgba(0, 0, 0, 0.35);
 }
 .badge-card__icon {
 	font-size: 1.75rem;
@@ -624,6 +674,7 @@ html[data-theme='dark'] .badge-card {
 	font-size: 0.88rem;
 	line-height: 1.45;
 	color: #5e5650;
+	flex: 1 1 auto;
 }
 html[data-theme='dark'] .badge-card__desc {
 	color: var(--color-muted);
@@ -723,8 +774,15 @@ html[data-theme='dark'] .match-card {
 	font-size: 0.68rem;
 	font-weight: 700;
 	text-align: center;
-	line-height: 1.2;
+	line-height: 1.25;
 	padding: 0 0.15rem;
+	min-height: 3.75em;
+	max-width: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	word-break: break-word;
 }
 .match-card__back {
 	font-size: 1.75rem;

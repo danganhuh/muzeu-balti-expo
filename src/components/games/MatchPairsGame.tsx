@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { LanguageCode } from '../../types/settings'
 import { pickLocalized } from '../../i18n/pickLocalized'
-import { remoteExhibitHeroes } from '../../data/remoteMedia'
+import { matchPairImages } from '../../data/matchGameMedia'
 import { loadMatchGameProgress, saveMatchGameProgress, submitLeaderboardEntry } from '../../services/storage/interactiveStorage'
 import { LEADERBOARD_KEYS } from '../../constants/leaderboards'
 import { syncBadges } from '../../services/badgeSync'
@@ -20,49 +20,49 @@ const deckSeed: readonly Card[] = [
   {
     key: 'a1',
     pairId: 'piazza',
-    image: remoteExhibitHeroes.marketSquare,
+    image: matchPairImages.marketSquare,
     caption: { ro: 'Piața din Bălți', ru: 'Площадь в Бельцах', en: 'Square in Bălți' },
   },
   {
     key: 'a2',
     pairId: 'piazza',
-    image: remoteExhibitHeroes.marketSquare,
+    image: matchPairImages.marketSquare,
     caption: { ro: 'Piața din Bălți', ru: 'Площадь в Бельцах', en: 'Square in Bălți' },
   },
   {
     key: 'b1',
     pairId: 'facade',
-    image: remoteExhibitHeroes.streetFacade,
+    image: matchPairImages.streetFacade,
     caption: { ro: 'Fațada Băncii Românești', ru: 'Фасад «Banca Românească»', en: 'Banca Românească façade' },
   },
   {
     key: 'b2',
     pairId: 'facade',
-    image: remoteExhibitHeroes.streetFacade,
+    image: matchPairImages.streetFacade,
     caption: { ro: 'Fațada Băncii Românești', ru: 'Фасад «Banca Românească»', en: 'Banca Românească façade' },
   },
   {
     key: 'c1',
     pairId: 'courtyard',
-    image: remoteExhibitHeroes.courtyardWell,
+    image: matchPairImages.courtyardWell,
     caption: { ro: 'Curtea catedralei', ru: 'Двор собора', en: 'Cathedral yard' },
   },
   {
     key: 'c2',
     pairId: 'courtyard',
-    image: remoteExhibitHeroes.courtyardWell,
+    image: matchPairImages.courtyardWell,
     caption: { ro: 'Curtea catedralei', ru: 'Двор собора', en: 'Cathedral yard' },
   },
   {
     key: 'd1',
     pairId: 'loom',
-    image: remoteExhibitHeroes.weaverLoom,
+    image: matchPairImages.weaverLoom,
     caption: { ro: 'Război de țesut', ru: 'Ткацкий станок', en: 'Weaving loom' },
   },
   {
     key: 'd2',
     pairId: 'loom',
-    image: remoteExhibitHeroes.weaverLoom,
+    image: matchPairImages.weaverLoom,
     caption: { ro: 'Război de țesut', ru: 'Ткацкий станок', en: 'Weaving loom' },
   },
 ]
@@ -166,7 +166,15 @@ export function MatchPairsGame({ language }: Props) {
             >
               {show ? (
                 <>
-                  <img src={c.image} alt="" className="match-card__img" width={160} height={110} />
+                  <img
+                    src={c.image}
+                    alt=""
+                    className="match-card__img"
+                    width={160}
+                    height={110}
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <span className="match-card__cap">{pickLocalized(language, c.caption)}</span>
                 </>
               ) : (

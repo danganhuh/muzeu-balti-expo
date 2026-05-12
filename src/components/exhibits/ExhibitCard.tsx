@@ -33,32 +33,34 @@ export function ExhibitCard({
 
   return (
     <div className="exhibit-card-stack">
-      <Link className="exhibition-card" to={to}>
-        <img
-          src={publicUrl(exhibit.heroImage)}
-          alt=""
-          width={360}
-          height={192}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
+      <div className="exhibition-card exhibition-card--compound">
+        <Link className="exhibition-card__main" to={to}>
+          <img
+            src={publicUrl(exhibit.heroImage)}
+            alt=""
+            width={360}
+            height={192}
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+          />
+          <div className="exhibition-card__content">
+            <span className="exhibition-card__status">{t(`exhibit.era.${exhibit.era}`, { lng: lang })}</span>
+            <h2 className="exhibition-card__title">{pickLocalized(lang, exhibit.title)}</h2>
+            <p className="exhibition-card__desc">{pickLocalized(lang, exhibit.shortDescription)}</p>
+            <span className="exhibition-card__more">{t('exhibit.card.more')}</span>
+          </div>
+        </Link>
+        <ExhibitActionsBar
+          variant="inCard"
+          isFavorite={isFavorite}
+          inAlbum={inAlbum}
+          isStudied={isStudied}
+          onToggleFavorite={onToggleFavorite}
+          onToggleAlbum={onToggleAlbum}
+          onToggleStudied={onToggleStudied}
         />
-        <div className="exhibition-card__content">
-          <span className="exhibition-card__status">{t(`exhibit.era.${exhibit.era}`, { lng: lang })}</span>
-          <h2 className="exhibition-card__title">{pickLocalized(lang, exhibit.title)}</h2>
-          <p className="exhibition-card__desc">{pickLocalized(lang, exhibit.shortDescription)}</p>
-          <span className="exhibition-card__more">{t('exhibit.card.more')}</span>
-        </div>
-      </Link>
-      <ExhibitActionsBar
-        variant="compact"
-        isFavorite={isFavorite}
-        inAlbum={inAlbum}
-        isStudied={isStudied}
-        onToggleFavorite={onToggleFavorite}
-        onToggleAlbum={onToggleAlbum}
-        onToggleStudied={onToggleStudied}
-      />
+      </div>
     </div>
   )
 }

@@ -34,6 +34,13 @@
     "system": "System",
     "cycle": "Cycle theme"
   },
+  "kiosk": {
+    "panelLabel": "Continue on your phone",
+    "joinTitle": "Continue on your phone",
+    "joinIntro": "Scan this QR code with a phone or tablet. The link is unique to this kiosk session so your group opens the same exhibition site.",
+    "joinHint": "Use the camera app or a QR reader. Works on the same Wi‑Fi or mobile data as this screen.",
+    "qrAlt": "QR code that opens the exhibition on your device"
+  },
   "lang": {
     "groupLabel": "Interface language",
     "ro": "RO",

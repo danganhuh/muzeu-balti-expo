@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { ThemeProvider } from './ThemeProvider'
 import { I18nProvider } from './I18nProvider'
+import { KioskProvider } from './KioskProvider'
 import { migrateStorage } from '../services/storage/migrateStorage'
 
 export function AppProviders({ children }: { children: ReactNode }) {
@@ -11,7 +12,9 @@ export function AppProviders({ children }: { children: ReactNode }) {
 
   return (
     <ThemeProvider>
-      <I18nProvider>{children}</I18nProvider>
+      <KioskProvider>
+        <I18nProvider>{children}</I18nProvider>
+      </KioskProvider>
     </ThemeProvider>
   )
 }

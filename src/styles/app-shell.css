@@ -327,7 +327,7 @@ html[data-theme='dark'] .lang-switcher__btn:hover {
 
 .placeholder-page__text {
 	margin: 0;
-	color: var(--color-muted);
+	color: var(--color-muted, #5e5650);
 	line-height: 1.65;
 	font-size: 1.05rem;
 }
@@ -358,6 +358,130 @@ html[data-theme='dark'] .lang-switcher__btn:hover {
 
 html[data-theme='dark'] .logo__img {
 	filter: brightness(1.15) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* Ghost buttons: vendor styles assume dark hero; app pages use cream / cards */
+.app-shell__main .btn--ghost,
+.app-shell__main a.btn--ghost {
+	color: #1f1a15;
+	border-color: rgba(31, 26, 21, 0.38);
+	background: rgba(255, 255, 255, 0.55);
+}
+
+.app-shell__main .btn--ghost:hover,
+.app-shell__main a.btn--ghost:hover {
+	color: #0d0a08;
+	background: rgba(255, 255, 255, 0.95);
+	border-color: rgba(31, 26, 21, 0.5);
+}
+
+html[data-theme='dark'] .app-shell__main .btn--ghost,
+html[data-theme='dark'] .app-shell__main a.btn--ghost {
+	color: rgba(244, 239, 232, 0.96);
+	border-color: rgba(244, 239, 232, 0.38);
+	background: rgba(255, 255, 255, 0.07);
+}
+
+html[data-theme='dark'] .app-shell__main .btn--ghost:hover,
+html[data-theme='dark'] .app-shell__main a.btn--ghost:hover {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.14);
+	border-color: rgba(244, 239, 232, 0.55);
+}
+
+.hero--app .btn--ghost,
+.hero--app a.btn--ghost {
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.55);
+	background: transparent;
+}
+
+.hero--app .btn--ghost:hover,
+.hero--app a.btn--ghost:hover {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.12);
+	border-color: #fff;
+}
+
+/* Kiosk: QR to open the same site on a phone */
+.kiosk-join-qr {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem 1.75rem;
+	padding: clamp(0.85rem, 2.5vw, 1.1rem) max(1rem, env(safe-area-inset-left, 0px))
+		clamp(0.85rem, 2.5vw, 1.1rem) max(1rem, env(safe-area-inset-right, 0px));
+	border-top: 1px solid rgba(31, 26, 21, 0.12);
+	background: rgba(250, 247, 242, 0.97);
+	box-shadow: 0 -6px 28px rgba(31, 26, 21, 0.08);
+}
+
+html[data-theme='dark'] .kiosk-join-qr {
+	border-top-color: rgba(244, 239, 232, 0.12);
+	background: rgba(26, 23, 20, 0.97);
+	box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.kiosk-join-qr__text {
+	flex: 1 1 220px;
+	max-width: 42ch;
+	min-width: 0;
+}
+
+.kiosk-join-qr__title {
+	margin: 0 0 0.35rem;
+	font-size: 1.05rem;
+	font-weight: 800;
+	color: var(--color-ink, #1f1a15);
+}
+
+.kiosk-join-qr__intro,
+.kiosk-join-qr__hint {
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.45;
+	color: var(--color-muted, #5e5650);
+}
+
+.kiosk-join-qr__hint {
+	margin-top: 0.35rem;
+	font-size: 0.8rem;
+}
+
+html[data-theme='dark'] .kiosk-join-qr__title {
+	color: var(--color-ink);
+}
+
+html[data-theme='dark'] .kiosk-join-qr__intro,
+html[data-theme='dark'] .kiosk-join-qr__hint {
+	color: var(--color-muted);
+}
+
+.kiosk-join-qr__canvas-wrap {
+	flex: 0 0 auto;
+	padding: 0.45rem;
+	background: #fff;
+	border-radius: 12px;
+	border: 1px solid rgba(31, 26, 21, 0.1);
+	box-shadow: var(--shadow-card);
+}
+
+html[data-theme='dark'] .kiosk-join-qr__canvas-wrap {
+	background: #faf7f2;
+	border-color: rgba(244, 239, 232, 0.22);
+}
+
+.kiosk-join-qr__canvas {
+	display: block;
+}
+
+.kiosk-join-qr__fallback {
+	margin: 0.5rem 0 0;
+	font-size: 0.72rem;
+	word-break: break-all;
+	color: var(--color-muted, #5e5650);
+	max-width: 16rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
