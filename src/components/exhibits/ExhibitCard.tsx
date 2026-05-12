@@ -34,7 +34,15 @@ export function ExhibitCard({
   return (
     <div className="exhibit-card-stack">
       <Link className="exhibition-card" to={to}>
-        <img src={publicUrl(exhibit.heroImage)} alt="" width={360} height={192} loading="lazy" />
+        <img
+          src={publicUrl(exhibit.heroImage)}
+          alt=""
+          width={360}
+          height={192}
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
+        />
         <div className="exhibition-card__content">
           <span className="exhibition-card__status">{t(`exhibit.era.${exhibit.era}`, { lng: lang })}</span>
           <h2 className="exhibition-card__title">{pickLocalized(lang, exhibit.title)}</h2>

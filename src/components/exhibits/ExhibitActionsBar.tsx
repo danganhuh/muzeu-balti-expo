@@ -26,27 +26,54 @@ export function ExhibitActionsBar({
     <div className={cls} role="group" aria-label={t('exhibit.actions.groupLabel')}>
       <button
         type="button"
-        className={['exhibit-actions__btn', isFavorite ? 'exhibit-actions__btn--on' : ''].join(' ')}
+        className={[
+          'exhibit-actions__btn',
+          'exhibit-actions__btn--like',
+          isFavorite ? 'exhibit-actions__btn--on' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
         aria-pressed={isFavorite}
+        title={t('exhibit.actions.tooltipFavorite')}
         onClick={onToggleFavorite}
       >
-        {isFavorite ? t('exhibit.actions.favoriteOn') : t('exhibit.actions.favoriteOff')}
+        <span className="exhibit-actions__label">
+          {isFavorite ? t('exhibit.actions.favoriteOn') : t('exhibit.actions.favoriteOff')}
+        </span>
       </button>
       <button
         type="button"
-        className={['exhibit-actions__btn', inAlbum ? 'exhibit-actions__btn--on' : ''].join(' ')}
+        className={[
+          'exhibit-actions__btn',
+          'exhibit-actions__btn--album',
+          inAlbum ? 'exhibit-actions__btn--on' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
         aria-pressed={inAlbum}
+        title={t('exhibit.actions.tooltipAlbum')}
         onClick={onToggleAlbum}
       >
-        {inAlbum ? t('exhibit.actions.albumRemove') : t('exhibit.actions.albumAdd')}
+        <span className="exhibit-actions__label">
+          {inAlbum ? t('exhibit.actions.albumRemove') : t('exhibit.actions.albumAdd')}
+        </span>
       </button>
       <button
         type="button"
-        className={['exhibit-actions__btn', isStudied ? 'exhibit-actions__btn--on' : ''].join(' ')}
+        className={[
+          'exhibit-actions__btn',
+          'exhibit-actions__btn--studied',
+          isStudied ? 'exhibit-actions__btn--on' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
         aria-pressed={isStudied}
+        title={t('exhibit.actions.tooltipStudied')}
         onClick={onToggleStudied}
       >
-        {isStudied ? t('exhibit.actions.studiedOn') : t('exhibit.actions.studiedOff')}
+        <span className="exhibit-actions__label">
+          {isStudied ? t('exhibit.actions.studiedOn') : t('exhibit.actions.studiedOff')}
+        </span>
       </button>
     </div>
   )

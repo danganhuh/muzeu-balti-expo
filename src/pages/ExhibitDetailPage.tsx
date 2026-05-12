@@ -45,6 +45,8 @@ export function ExhibitDetailPage() {
               width={960}
               height={540}
               loading="eager"
+              decoding="async"
+              referrerPolicy="no-referrer"
             />
           </div>
           <div className="exhibit-detail__headline">
@@ -108,6 +110,8 @@ export function ExhibitDetailPage() {
                     width={120}
                     height={150}
                     loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
                   />
                   <div className="exhibit-person-card__body">
                     <h3 className="exhibit-person-card__name">{pickLocalized(lang, p.name)}</h3>

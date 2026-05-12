@@ -93,6 +93,9 @@
     },
     "actions": {
       "groupLabel": "Exhibit actions",
+      "tooltipFavorite": "Mark this exhibit as a favorite (like).",
+      "tooltipAlbum": "Add or remove from your personal album.",
+      "tooltipStudied": "Mark that you have studied this exhibit.",
       "favoriteOn": "Liked ✓",
       "favoriteOff": "Like",
       "albumAdd": "Add to album",

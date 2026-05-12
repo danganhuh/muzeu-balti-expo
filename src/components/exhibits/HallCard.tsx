@@ -11,7 +11,15 @@ export function HallCard({ hall }: { hall: Hall }) {
 
   return (
     <Link className="exhibition-card hall-card" to={`/halls/${hall.slug}`}>
-      <img src={publicUrl(hall.coverImage)} alt="" width={360} height={192} loading="lazy" />
+      <img
+        src={publicUrl(hall.coverImage)}
+        alt=""
+        width={360}
+        height={192}
+        loading="lazy"
+        decoding="async"
+        referrerPolicy="no-referrer"
+      />
       <div className="exhibition-card__content">
         <span className="exhibition-card__status">{t('halls.card.badge')}</span>
         <h2 className="exhibition-card__title">{pickLocalized(lang, hall.title)}</h2>

@@ -1,4 +1,5 @@
 import type { Hall } from '../types/museum'
+import { remoteHallCovers } from './remoteMedia'
 
 export const halls: readonly Hall[] = [
   {
@@ -10,7 +11,7 @@ export const halls: readonly Hall[] = [
       ru: 'Старый Бельцы: улицы и рынки',
       en: 'Old Bălți: streets and markets',
     },
-    coverImage: 'images/placeholders/hall.svg',
+    coverImage: remoteHallCovers.oldBalti,
   },
   {
     id: 'hall-crafts',
@@ -21,7 +22,7 @@ export const halls: readonly Hall[] = [
       ru: 'Ремёсла и мастерские',
       en: 'Crafts and workshops',
     },
-    coverImage: 'images/placeholders/hall.svg',
+    coverImage: remoteHallCovers.crafts,
   },
   {
     id: 'hall-coins',
@@ -32,7 +33,7 @@ export const halls: readonly Hall[] = [
       ru: 'Монеты и торговля на Пруте',
       en: 'Coins and trade on the Prut',
     },
-    coverImage: 'images/placeholders/hall.svg',
+    coverImage: remoteHallCovers.coins,
   },
   {
     id: 'hall-faces',
@@ -43,6 +44,6 @@ export const halls: readonly Hall[] = [
       ru: 'Лица города',
       en: 'Faces of the city',
     },
-    coverImage: 'images/placeholders/hall.svg',
+    coverImage: remoteHallCovers.faces,
   },
 ]

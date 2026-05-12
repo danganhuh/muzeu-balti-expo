@@ -1,4 +1,5 @@
 import type { HistoricalPerson } from '../types/museum'
+import { remotePortrait, wikimediaAlecsandriPortrait } from './remoteMedia'
 
 export const historicalPeople: readonly HistoricalPerson[] = [
   {
@@ -21,7 +22,7 @@ export const historicalPeople: readonly HistoricalPerson[] = [
       ru: 'Центральная фигура румынской литературы XIX века; влияние на театр и фольклор региона.',
       en: 'A central figure of 19th-century Romanian literature with influence on theatre and regional folklore.',
     },
-    portraitImage: 'images/placeholders/portrait.svg',
+    portraitImage: wikimediaAlecsandriPortrait,
     exhibitIds: ['exhibit-letters-stage'],
   },
   {
@@ -44,7 +45,7 @@ export const historicalPeople: readonly HistoricalPerson[] = [
       ru: 'Фасады с керамическими деталями, аттики и фронтоны, формирующие городской облик начала XX века.',
       en: 'Facades with ceramic ornament, attics, and pediments that shaped early 20th-century urban Bălți.',
     },
-    portraitImage: 'images/placeholders/portrait.svg',
+    portraitImage: remotePortrait.architectPlans,
     exhibitIds: ['exhibit-street-facade', 'exhibit-market-square'],
   },
   {
@@ -65,7 +66,7 @@ export const historicalPeople: readonly HistoricalPerson[] = [
       ru: 'Монеты и гири в экспозиции показывают взаимное доверие между общинами и властью.',
       en: 'Coins and weights in the show illustrate trust between communities and local authorities.',
     },
-    portraitImage: 'images/placeholders/portrait.svg',
+    portraitImage: remotePortrait.merchantCoins,
     exhibitIds: ['exhibit-prut-coins', 'exhibit-market-square'],
   },
 ]

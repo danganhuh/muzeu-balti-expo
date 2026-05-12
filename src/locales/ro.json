@@ -93,6 +93,9 @@
     },
     "actions": {
       "groupLabel": "Acțiuni exponat",
+      "tooltipFavorite": "Marchează exponatul ca favorit (like).",
+      "tooltipAlbum": "Adaugă sau scoate din albumul personal.",
+      "tooltipStudied": "Marchează că ai parcurs exponatul.",
       "favoriteOn": "Îmi place ✓",
       "favoriteOff": "Îmi place",
       "albumAdd": "În album",
