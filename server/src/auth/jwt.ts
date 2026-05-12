@@ -1,5 +1,6 @@
-import jwt from 'jsonwebtoken'
-import type { AccessTokenClaims } from './types.js'
+import jwt, { type SignOptions } from 'jsonwebtoken'
+import { isPermission, isRole } from './roles.js'
+import type { AccessTokenClaims, Permission, Role } from './types.js'
 
 const ISSUER = 'lab6-api'
 
@@ -24,7 +25,7 @@ export function warnIfInsecureJwtSecret(): void {
 export function signAccessToken(claims: AccessTokenClaims): string {
   return jwt.sign(claims, getSecret(), {
     algorithm: 'HS256',
-    expiresIn: getJwtExpiresIn(),
+    expiresIn: getJwtExpiresIn() as NonNullable<SignOptions['expiresIn']>,
     issuer: ISSUER,
   })
 }
@@ -44,16 +45,24 @@ export function verifyAccessToken(token: string): AccessTokenClaims {
   if (typeof sub !== 'string' || !sub) {
     throw new jwt.JsonWebTokenError('Invalid sub')
   }
-  if (typeof role !== 'string') {
+  if (typeof role !== 'string' || !isRole(role)) {
     throw new jwt.JsonWebTokenError('Invalid role')
   }
   if (!Array.isArray(permissions)) {
     throw new jwt.JsonWebTokenError('Invalid permissions')
   }
 
+  const normalizedPerms: Permission[] = []
+  for (const p of permissions) {
+    if (typeof p !== 'string' || !isPermission(p)) {
+      throw new jwt.JsonWebTokenError('Invalid permissions')
+    }
+    normalizedPerms.push(p)
+  }
+
   return {
     sub,
-    role: role as AccessTokenClaims['role'],
-    permissions: permissions as AccessTokenClaims['permissions'],
+    role: role as Role,
+    permissions: normalizedPerms,
   }
 }

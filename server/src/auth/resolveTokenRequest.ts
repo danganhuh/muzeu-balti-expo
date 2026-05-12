@@ -3,7 +3,7 @@ import { isPermission, isRole, roleDefaultPermissions } from './roles.js'
 
 export type TokenRequestInput = {
   role?: string | undefined
-  permissions?: string[] | undefined
+  permissions?: Permission[] | undefined
 }
 
 function uniqueSorted(perms: Iterable<Permission>): Permission[] {
@@ -55,4 +55,21 @@ export function parsePermissionsQuery(raw: string | undefined): Permission[] | u
   if (raw == null || raw.trim() === '') return undefined
   const parts = raw.split(',').map((s) => s.trim()).filter(Boolean)
   return parts.map(parsePermission)
+}
+
+export function parsePermissionsBody(value: unknown): Permission[] | undefined {
+  if (value === undefined) return undefined
+  if (!Array.isArray(value)) {
+    const err = new Error('permissions must be an array of strings when provided')
+    ;(err as NodeJS.ErrnoException).code = 'INVALID_PERMISSION'
+    throw err
+  }
+  return value.map((item, i) => {
+    if (typeof item !== 'string') {
+      const err = new Error(`permissions[${i}] must be a string`)
+      ;(err as NodeJS.ErrnoException).code = 'INVALID_PERMISSION'
+      throw err
+    }
+    return parsePermission(item)
+  })
 }
