@@ -25,6 +25,9 @@ export function HomePage() {
           <Link className="btn btn--ghost" to="/timeline">
             {t('home.ctaTimeline')}
           </Link>
+          <Link className="btn btn--ghost" to="/games">
+            {t('home.ctaGames')}
+          </Link>
         </div>
       </div>
     </section>

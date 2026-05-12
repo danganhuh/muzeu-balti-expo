@@ -87,3 +87,18 @@ export const remotePortrait = {
   architectPlans: exhibitStreetFacade,
   merchantCoins: portraitMerchantTrade,
 } as const
+
+/**
+ * Timeline / chronology images. Commons rejects arbitrary thumb widths (e.g. 400px); reuse
+ * working exhibit URLs where possible. CSS scales them in the rail and mission cards.
+ */
+export const remoteTimelineThumbs = {
+  fair: exhibitMarketSquare,
+  /** Related exhibits use coins; historic CFR map file on Commons was unavailable. */
+  rail: exhibitPrutCoins,
+  street: hallFacesCover,
+  stamp: exhibitStampTax,
+  /** SVG-derived PNG: only certain widths are generated (330px works; 400px returns 400). */
+  flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Moldova.svg/330px-Flag_of_Moldova.svg.png',
+  bank: exhibitStreetFacade,
+} as const

@@ -145,37 +145,32 @@ html[data-theme="dark"] .hall-detail__empty {
 }
 
 html[data-theme="dark"] .exhibit-actions {
-	background: linear-gradient(180deg, rgba(40, 36, 32, 0.98) 0%, rgba(28, 25, 22, 0.96) 100%);
-	border-color: rgba(244, 239, 232, 0.14);
-	box-shadow:
-		0 2px 14px rgba(0, 0, 0, 0.45),
-		inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	background: transparent;
+	border: none;
+	box-shadow: none;
 }
 
-html[data-theme="dark"] .exhibit-actions__btn {
-	background: linear-gradient(180deg, rgba(55, 50, 45, 0.95) 0%, rgba(34, 30, 27, 0.98) 100%);
-	border-color: rgba(244, 239, 232, 0.2);
+html[data-theme="dark"] .exhibit-actions__btn--iconic {
+	background: rgba(255, 255, 255, 0.06);
+	border-color: rgba(244, 239, 232, 0.12);
+	color: var(--color-muted);
+}
+
+html[data-theme="dark"] .exhibit-actions__btn--iconic:hover {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(244, 239, 232, 0.22);
 	color: var(--color-ink);
-	box-shadow:
-		0 1px 3px rgba(0, 0, 0, 0.35),
-		inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-html[data-theme="dark"] .exhibit-actions__btn:hover {
-	border-color: rgba(244, 239, 232, 0.28);
+html[data-theme="dark"] .exhibit-actions__btn--iconic.exhibit-actions__btn--on {
+	background: rgba(201, 162, 122, 0.18);
+	border-color: rgba(201, 162, 122, 0.45);
+	color: var(--color-accent);
 }
 
-html[data-theme="dark"] .exhibit-actions__btn--on {
-	background: linear-gradient(180deg, #a67c52 0%, #7b5234 55%, #5c3d26 100%);
-	border-color: rgba(201, 162, 122, 0.55);
+html[data-theme="dark"] .exhibit-actions__btn--iconic.exhibit-actions__btn--on:hover {
 	color: #fffaf5;
-	box-shadow:
-		0 2px 12px rgba(0, 0, 0, 0.45),
-		inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
-html[data-theme="dark"] .exhibit-actions__btn--on:hover {
-	color: #fff;
+	border-color: rgba(201, 162, 122, 0.6);
 }
 
 html[data-theme="dark"] .exhibit-detail__pill {

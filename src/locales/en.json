@@ -10,7 +10,8 @@
     "halls": "Halls",
     "timeline": "Timeline",
     "quiz": "Quiz",
-    "cabinet": "Cabinet"
+    "cabinet": "Cabinet",
+    "games": "Games"
   },
   "home": {
     "eyebrow": "Interactive exhibition",
@@ -18,9 +19,10 @@
     "titleLine2": "Bălți and the region",
     "subtitle": "A gamified path through halls, exhibits, timelines, and missions — all in the browser, with progress saved locally on your device.",
     "featuredLabel": "About the project",
-    "featuredTitle": "Museum-inspired visual identity, light or dark theme, three interface languages (Romanian, Russian, English), and a structure ready for content.",
+    "featuredTitle": "Hands-on stations: explore halls, solve the timeline mission, play the memory game, and collect badges — with calm museum lighting, a clear or dark theme, and Romanian, Russian, or English labels.",
     "ctaHalls": "Explore the halls",
-    "ctaTimeline": "Open the timeline"
+    "ctaTimeline": "Open the timeline",
+    "ctaGames": "Play memory pairs"
   },
   "footer": {
     "tagline": "Course lab app — client-side only, no server.",
@@ -109,5 +111,77 @@
       "noFunFacts": "No fun facts for this exhibit.",
       "relatedPeople": "Related personalities"
     }
+  },
+  "timeline": {
+    "eyebrow": "Chronology",
+    "title": "Regional timeline",
+    "intro": "Scroll the rail, open each event sheet, then try the ordering mission. Dates follow the mainstream narrative of Bessarabia and the Republic of Moldova.",
+    "rail": {
+      "hint": "Scroll horizontally — snap points keep each year card readable."
+    },
+    "sheet": {
+      "close": "Close",
+      "related": "Related exhibits"
+    },
+    "chronology": {
+      "title": "Mission: years in order",
+      "lede": "Years stay hidden. Drag the cards (grab the row) until the story runs from the oldest moment to the newest, then tap “Check order”.",
+      "completed": "Mission completed",
+      "hiddenYear": "While sorting, the year stays masked as “?”.",
+      "check": "Check order",
+      "reshuffle": "Shuffle again",
+      "dragHandle": "Reorder: {{title}}",
+      "liveSuccess": "Correct chronological order.",
+      "liveFail": "Not yet in historical order — drag cards and try again.",
+      "feedbackOk": "Well done — your explorer badge for this mission can unlock in the cabinet.",
+      "feedbackBad": "Some cards are still out of sequence. Clue: begin with the 16th-century fair and end with the 1994 constitution."
+    }
+  },
+  "quiz": {
+    "eyebrow": "Knowledge check",
+    "title": "Museum quizzes",
+    "intro": "Five questions each, immediate feedback with a short explanation. Save a pseudonym to the local top five if you like.",
+    "tablistLabel": "Choose a quiz",
+    "progress": "Question {{current}} / {{total}}",
+    "doneTitle": "Run complete",
+    "scoreLine": "Score: {{score}} / {{total}}",
+    "passed": "You reached the badge threshold — see the cabinet.",
+    "retryHint": "Open the other quiz or revisit the timeline, then try again."
+  },
+  "cabinet": {
+    "eyebrow": "Your progress",
+    "title": "Explorer cabinet",
+    "intro": "Badges unlock from the timeline, quizzes, and the memory game. Leaderboards stay only on this device.",
+    "refresh": "Refresh progress",
+    "gotoQuiz": "Go to quizzes",
+    "gotoGames": "Mini-games",
+    "gotoTimeline": "Timeline",
+    "statsTitle": "Quiz bests",
+    "statUrban": "Bălți urban quiz — best {{n}} / 5",
+    "statRegion": "Regional quiz — best {{n}} / 5",
+    "badgesTitle": "Badge cabinet",
+    "lockedHint": "Complete missions elsewhere to reveal this badge."
+  },
+  "games": {
+    "eyebrow": "Playful desk",
+    "title": "Mini-games",
+    "intro": "A short memory game with photographs from Bălți — match pairs, beat your move count, and optionally save a nickname to the local top five.",
+    "match": {
+      "moves": "Moves: {{count}}",
+      "win": "All pairs found!",
+      "gridLabel": "Memory cards"
+    }
+  },
+  "leaderboard": {
+    "title": "Local hall of fame (top 5)",
+    "note": "Scores never leave your browser. Enter a short pseudonym after a quiz or game.",
+    "pseudonymLabel": "Pseudonym (2–24 characters)",
+    "pseudonymPlaceholder": "e.g. Muzeograf_01",
+    "save": "Save to leaderboard",
+    "saved": "Saved",
+    "empty": "No scores yet — play first.",
+    "blockQuizUrban": "Quiz — Bălți urban",
+    "blockQuizRegion": "Quiz — region",
+    "blockMatch": "Memory pairs"
   }
 }

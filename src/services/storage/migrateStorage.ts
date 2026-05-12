@@ -47,6 +47,23 @@ export function migrateStorage(): void {
     version = 1
   }
 
+  if (version < 2) {
+    if (localStorage.getItem(STORAGE_KEYS.seenEvents) == null) writeRawJsonKey(STORAGE_KEYS.seenEvents, [])
+    if (localStorage.getItem(STORAGE_KEYS.quizProgress) == null) writeRawJsonKey(STORAGE_KEYS.quizProgress, {})
+    if (localStorage.getItem(STORAGE_KEYS.badges) == null) writeRawJsonKey(STORAGE_KEYS.badges, [])
+    if (localStorage.getItem(STORAGE_KEYS.leaderboard) == null) writeRawJsonKey(STORAGE_KEYS.leaderboard, {})
+    if (localStorage.getItem(STORAGE_KEYS.gameChronology) == null) {
+      writeRawJsonKey(STORAGE_KEYS.gameChronology, { completed: false, attempts: 0 })
+    }
+    if (localStorage.getItem(STORAGE_KEYS.gameMatch) == null) {
+      writeRawJsonKey(STORAGE_KEYS.gameMatch, { bestMoves: null, completedCount: 0 })
+    }
+    if (localStorage.getItem(STORAGE_KEYS.gameHiddenRelic) == null) {
+      writeRawJsonKey(STORAGE_KEYS.gameHiddenRelic, { bestTimeMs: null, wins: 0 })
+    }
+    version = 2
+  }
+
   if (version < CURRENT_SCHEMA_VERSION) {
     version = CURRENT_SCHEMA_VERSION
   }

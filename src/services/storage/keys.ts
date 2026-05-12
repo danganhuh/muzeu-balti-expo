@@ -8,7 +8,15 @@ export const STORAGE_KEYS = {
   album: `${STORAGE_PREFIX}album`,
   studiedExhibits: `${STORAGE_PREFIX}studiedExhibits`,
   exhibitFilters: `${STORAGE_PREFIX}exhibitFilters`,
+  seenEvents: `${STORAGE_PREFIX}seenEvents`,
+  timelineSolved: `${STORAGE_PREFIX}timelineSolved`,
+  quizProgress: `${STORAGE_PREFIX}quizProgress`,
+  badges: `${STORAGE_PREFIX}badges`,
+  leaderboard: `${STORAGE_PREFIX}leaderboard`,
+  gameChronology: `${STORAGE_PREFIX}game:chronology:main`,
+  gameMatch: `${STORAGE_PREFIX}game:match:main`,
+  gameHiddenRelic: `${STORAGE_PREFIX}game:hiddenRelic:main`,
 } as const
 
 /** Bump when persisted shape changes; handled in migrateStorage(). */
-export const CURRENT_SCHEMA_VERSION = 1
+export const CURRENT_SCHEMA_VERSION = 2

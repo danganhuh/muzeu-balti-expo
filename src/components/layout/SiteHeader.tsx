@@ -40,6 +40,11 @@ export function SiteHeader() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/games" className={navClass}>
+                {t('nav.games')}
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/cabinet" className={navClass}>
                 {t('nav.cabinet')}
               </NavLink>
