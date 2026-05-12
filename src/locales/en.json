@@ -44,5 +44,70 @@
     "titleQuiz": "Quiz",
     "titleCabinet": "Explorer cabinet",
     "body": "Content for this section will be added in later stages. Use the menu to return to the home page."
+  },
+  "halls": {
+    "eyebrow": "Exhibition path",
+    "title": "Exhibition halls",
+    "intro": "Pick a hall to browse exhibits in a horizontal strip with filters for era, category, and your collection.",
+    "crumbsLabel": "Breadcrumb trail",
+    "card": {
+      "badge": "Hall",
+      "hint": "Open exhibits in this hall",
+      "enter": "Enter"
+    },
+    "detail": {
+      "subtitle": "Scroll sideways to see every card. Use the filters above to narrow the list."
+    }
+  },
+  "exhibit": {
+    "card": {
+      "more": "Details"
+    },
+    "filters": {
+      "ariaLabel": "Exhibit filters",
+      "era": "Era",
+      "category": "Category",
+      "collectionHeading": "Collection",
+      "all": "All",
+      "empty": "No exhibits match these filters. Try “All” or another combination.",
+      "collectionOptions": {
+        "all": "All exhibits",
+        "favorites": "Favorites",
+        "unstudied": "Not yet studied"
+      }
+    },
+    "era": {
+      "antiquity": "Antiquity",
+      "medieval": "Medieval",
+      "early_modern": "Early modern",
+      "modern": "Modern",
+      "contemporary": "Contemporary"
+    },
+    "category": {
+      "architecture": "Architecture",
+      "urbanism": "Urbanism",
+      "crafts": "Crafts",
+      "daily_life": "Daily life",
+      "numismatics": "Numismatics",
+      "personalities": "Personalities"
+    },
+    "actions": {
+      "groupLabel": "Exhibit actions",
+      "tooltipFavorite": "Mark this exhibit as a favorite (like).",
+      "tooltipAlbum": "Add or remove from your personal album.",
+      "tooltipStudied": "Mark that you have studied this exhibit.",
+      "favoriteOn": "Liked ✓",
+      "favoriteOff": "Like",
+      "albumAdd": "Add to album",
+      "albumRemove": "Remove from album",
+      "studiedOn": "Studied ✓",
+      "studiedOff": "Mark studied"
+    },
+    "detail": {
+      "story": "Exhibit story",
+      "funFacts": "Fun facts",
+      "noFunFacts": "No fun facts for this exhibit.",
+      "relatedPeople": "Related personalities"
+    }
   }
 }

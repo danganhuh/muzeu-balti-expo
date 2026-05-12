@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500" role="img" aria-label="">
+  <rect width="400" height="500" fill="#2a241f"/>
+  <ellipse cx="200" cy="200" rx="90" ry="100" fill="#c9a27a" opacity=".35"/>
+  <ellipse cx="200" cy="360" rx="140" ry="160" fill="#1c1916" stroke="rgba(201,162,122,.4)" stroke-width="2"/>
+  <text x="200" y="480" text-anchor="middle" fill="rgba(244,239,232,.5)" font-family="Georgia,serif" font-size="14">Portrait</text>
+</svg>

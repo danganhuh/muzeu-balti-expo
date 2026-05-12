@@ -44,5 +44,70 @@
     "titleQuiz": "Quiz",
     "titleCabinet": "Cabinetul exploratorului",
     "body": "Conținutul acestei secțiuni va fi adăugat în etapele următoare. Folosește meniul pentru a reveni la pagina principală."
+  },
+  "halls": {
+    "eyebrow": "Parcurs expozițional",
+    "title": "Sălile expoziției",
+    "intro": "Alege o sală pentru a vedea exponatele într-un bandă orizontală cu filtre după epocă, categorie și colecția ta.",
+    "crumbsLabel": "Drumul spre sală",
+    "card": {
+      "badge": "Sală",
+      "hint": "Deschide exponatele acestei săli",
+      "enter": "Intră"
+    },
+    "detail": {
+      "subtitle": "Glisează orizontal pentru a vedea toate cardurile. Folosește filtrele de mai sus pentru a restrânge lista."
+    }
+  },
+  "exhibit": {
+    "card": {
+      "more": "Detalii"
+    },
+    "filters": {
+      "ariaLabel": "Filtre exponate",
+      "era": "Epocă",
+      "category": "Categorie",
+      "collectionHeading": "Colecție",
+      "all": "Toate",
+      "empty": "Niciun exponat nu se potrivește filtrelor. Încearcă „Toate” sau altă combinație.",
+      "collectionOptions": {
+        "all": "Toate exponatele",
+        "favorites": "Favorite",
+        "unstudied": "Nevizitate"
+      }
+    },
+    "era": {
+      "antiquity": "Antichitate",
+      "medieval": "Ev mediu",
+      "early_modern": "Modern timpuriu",
+      "modern": "Modern",
+      "contemporary": "Contemporan"
+    },
+    "category": {
+      "architecture": "Arhitectură",
+      "urbanism": "Urbanism",
+      "crafts": "Meșteșuguri",
+      "daily_life": "Viață cotidiană",
+      "numismatics": "Numismatică",
+      "personalities": "Personalități"
+    },
+    "actions": {
+      "groupLabel": "Acțiuni exponat",
+      "tooltipFavorite": "Marchează exponatul ca favorit (like).",
+      "tooltipAlbum": "Adaugă sau scoate din albumul personal.",
+      "tooltipStudied": "Marchează că ai parcurs exponatul.",
+      "favoriteOn": "Îmi place ✓",
+      "favoriteOff": "Îmi place",
+      "albumAdd": "În album",
+      "albumRemove": "Scoate din album",
+      "studiedOn": "Am învățat ✓",
+      "studiedOff": "Marchează învățat"
+    },
+    "detail": {
+      "story": "Povestea exponatului",
+      "funFacts": "Curiozități",
+      "noFunFacts": "Nu sunt curiozități pentru acest exponat.",
+      "relatedPeople": "Personalități legate"
+    }
   }
 }

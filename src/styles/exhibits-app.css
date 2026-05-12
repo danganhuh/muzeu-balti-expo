@@ -1,0 +1,464 @@
+/* Halls / exhibits UI — builds on tum-web-lab2 exhibition cards + tokens */
+
+.section--cream {
+	padding: clamp(2.5rem, 5vw, 4rem) 0;
+	background: #efe4d3;
+	min-height: 100%;
+}
+
+.halls-page__inner,
+.hall-detail__inner,
+.exhibit-detail__inner {
+	max-width: 1100px;
+}
+
+.halls-page__header,
+.hall-detail__header {
+	margin-bottom: 1.75rem;
+}
+
+.halls-page__eyebrow,
+.hall-detail__subtitle {
+	margin: 0 0 0.35rem;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #7b5234;
+}
+
+.halls-page__title,
+.hall-detail__title,
+.exhibit-detail__title {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(1.65rem, 3vw, 2.25rem);
+	font-weight: 700;
+	color: #1f1a15;
+	line-height: 1.2;
+}
+
+.halls-page__intro,
+.hall-detail__subtitle {
+	font-size: 1.05rem;
+	line-height: 1.6;
+	color: #5e5650;
+	margin: 0.75rem 0 0;
+	max-width: 52ch;
+}
+
+.hall-detail__subtitle {
+	text-transform: none;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.halls-page__grid > .halls-page__cell,
+.hall-detail__grid > [role='listitem'] {
+	flex: 0 0 clamp(270px, 30vw, 360px);
+	scroll-snap-align: start;
+	min-width: 0;
+}
+
+/* Cards fill their rail cell (card is not always a direct child of .exhibitions__grid) */
+.halls-page__cell .exhibition-card,
+.hall-detail__grid [role='listitem'] .exhibit-card-stack {
+	width: 100%;
+	max-width: 100%;
+}
+
+/* Mobile: slightly narrower cards + scroll inset so the first card is not clipped */
+@media (max-width: 640px) {
+	.halls-page__grid > .halls-page__cell,
+	.hall-detail__grid > [role='listitem'] {
+		flex: 0 0 min(86vw, 300px);
+	}
+
+	.halls-page__grid.exhibitions__grid,
+	.hall-detail__grid.exhibitions__grid {
+		gap: 0.75rem;
+		padding-inline: max(0.25rem, env(safe-area-inset-left, 0px))
+			max(0.25rem, env(safe-area-inset-right, 0px));
+		scroll-padding-inline: max(0.75rem, env(safe-area-inset-left, 0px));
+	}
+}
+
+.hall-card__hint {
+	font-size: 0.82rem !important;
+}
+
+/* Card + actions stack (horizontal rail) */
+.exhibit-card-stack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	height: 100%;
+}
+
+.exhibit-card-stack .exhibition-card {
+	flex: 1 1 auto;
+}
+
+/* Filter toolbar — horizontal scroll rows */
+.exhibit-filters {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	margin-bottom: 1.5rem;
+}
+
+.exhibit-filters__group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	min-width: 0;
+}
+
+.exhibit-filters__label {
+	font-size: 0.72rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #5e5650;
+}
+
+.exhibit-filters__scroller {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.45rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding-bottom: 0.35rem;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: thin;
+}
+
+.filter-chip {
+	flex: 0 0 auto;
+	border-radius: 999px;
+	border: 1px solid rgba(31, 26, 21, 0.18);
+	background: rgba(255, 255, 255, 0.55);
+	color: #1f1a15;
+	font: inherit;
+	font-size: 0.82rem;
+	font-weight: 600;
+	padding: 0.4rem 0.85rem;
+	cursor: pointer;
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease,
+		transform 0.15s ease;
+	white-space: nowrap;
+}
+
+.filter-chip:hover {
+	background: #fff;
+	transform: translateY(-1px);
+}
+
+.filter-chip--active {
+	background: linear-gradient(135deg, #9a6a45 0%, #7b5234 100%);
+	color: #fff;
+	border-color: rgba(31, 26, 21, 0.25);
+}
+
+.filter-chip:focus-visible {
+	outline: 3px solid rgba(139, 94, 60, 0.45);
+	outline-offset: 2px;
+}
+
+.hall-detail__crumbs,
+.exhibit-detail__crumbs {
+	font-size: 0.88rem;
+	margin-bottom: 1rem;
+	color: #5e5650;
+}
+
+.hall-detail__crumbs a,
+.exhibit-detail__crumbs a {
+	color: #7b5234;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.hall-detail__crumbs a:hover,
+.exhibit-detail__crumbs a:hover {
+	text-decoration: underline;
+}
+
+.hall-detail__crumbs-current,
+.exhibit-detail__crumbs-current {
+	color: #1f1a15;
+	font-weight: 600;
+}
+
+.hall-detail__empty {
+	margin: 1rem 0 0;
+	padding: 1rem 1.1rem;
+	border-radius: var(--radius-card);
+	border: 1px dashed rgba(31, 26, 21, 0.22);
+	background: rgba(255, 255, 255, 0.35);
+	color: #5e5650;
+}
+
+/* Exhibit actions — read as real buttons, not filter chips */
+.exhibit-actions {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.5rem;
+	margin-top: 0.45rem;
+	padding: 0.55rem;
+	border-radius: 12px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 239, 234, 0.94) 100%);
+	border: 1px solid rgba(31, 26, 21, 0.14);
+	box-shadow:
+		0 2px 10px rgba(0, 0, 0, 0.06),
+		inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.exhibit-actions--compact {
+	margin-top: 0.35rem;
+}
+
+.exhibit-actions__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 48px;
+	padding: 0.4rem 0.35rem;
+	border-radius: 10px;
+	border: 1px solid rgba(31, 26, 21, 0.22);
+	background: linear-gradient(180deg, #ffffff 0%, #f4ebe3 100%);
+	color: #1f1a15;
+	font: inherit;
+	font-size: 0.72rem;
+	font-weight: 800;
+	line-height: 1.2;
+	letter-spacing: 0.01em;
+	cursor: pointer;
+	box-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.95);
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease,
+		box-shadow 0.15s ease,
+		color 0.15s ease,
+		transform 0.12s ease;
+}
+
+.exhibit-actions__btn:hover {
+	border-color: rgba(31, 26, 21, 0.32);
+	box-shadow:
+		0 2px 8px rgba(0, 0, 0, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.exhibit-actions__btn:active {
+	transform: translateY(1px);
+	box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.exhibit-actions__label {
+	display: block;
+	max-width: 100%;
+	hyphens: auto;
+	overflow-wrap: anywhere;
+}
+
+.exhibit-actions__btn--on {
+	border-color: #5c3d26;
+	background: linear-gradient(180deg, #c49a74 0%, #7b5234 48%, #6a452c 100%);
+	color: #fffaf5;
+	box-shadow:
+		0 2px 10px rgba(123, 82, 52, 0.35),
+		inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.exhibit-actions__btn--on:hover {
+	border-color: #4a301f;
+	color: #fff;
+}
+
+.exhibit-actions__btn:focus-visible {
+	outline: 3px solid rgba(139, 94, 60, 0.5);
+	outline-offset: 2px;
+}
+
+@media (min-width: 480px) {
+	.exhibit-actions__btn {
+		font-size: 0.76rem;
+		padding: 0.45rem 0.4rem;
+	}
+}
+
+/* Exhibit detail */
+.exhibit-detail__hero {
+	display: grid;
+	gap: 1.25rem;
+	margin-bottom: 2rem;
+}
+
+@media (min-width: 840px) {
+	.exhibit-detail__hero {
+		grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+		align-items: start;
+	}
+}
+
+.exhibit-detail__img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: var(--radius-card);
+	border: 1px solid var(--border-card);
+	box-shadow: var(--shadow-card);
+	object-fit: cover;
+	max-height: min(52vh, 420px);
+}
+
+.exhibit-detail__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin: 0 0 0.75rem;
+}
+
+.exhibit-detail__pill {
+	display: inline-block;
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	padding: 0.3rem 0.55rem;
+	border-radius: 6px;
+	color: #6f4b31;
+	background: #f0e4d4;
+	border: 1px solid #e1cdb4;
+}
+
+.exhibit-detail__pill--muted {
+	font-weight: 700;
+	text-transform: none;
+	letter-spacing: 0;
+	font-size: 0.75rem;
+	color: #5e5650;
+	background: rgba(255, 255, 255, 0.65);
+	border-color: rgba(31, 26, 21, 0.12);
+}
+
+.exhibit-detail__lead {
+	font-size: 1.05rem;
+	line-height: 1.55;
+	color: #5e5650;
+	margin: 0 0 1rem;
+}
+
+.exhibit-detail__section {
+	margin-bottom: 2rem;
+}
+
+.exhibit-detail__section-title {
+	font-family: var(--font-display);
+	margin: 0 0 0.75rem;
+	font-size: 1.25rem;
+	color: #1f1a15;
+}
+
+.exhibit-detail__prose {
+	max-width: 65ch;
+	color: #222;
+	line-height: 1.65;
+	font-size: 1.02rem;
+}
+
+.exhibit-detail__prose p {
+	margin: 0 0 0.85rem;
+}
+
+.exhibit-detail__facts {
+	margin: 0;
+	padding-left: 1.15rem;
+	color: #222;
+	line-height: 1.55;
+}
+
+.exhibit-detail__facts li {
+	margin-bottom: 0.45rem;
+}
+
+.exhibit-detail__muted {
+	color: #5e5650;
+	margin: 0;
+}
+
+.exhibit-detail__people {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.exhibit-person-card {
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	gap: 1rem;
+	align-items: start;
+	padding: 1rem;
+	border-radius: var(--radius-card);
+	border: 1px solid var(--border-card);
+	background: #fff;
+	box-shadow: var(--shadow-card);
+}
+
+.exhibit-person-card__img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	object-fit: cover;
+	aspect-ratio: 4 / 5;
+}
+
+.exhibit-person-card__name {
+	margin: 0 0 0.25rem;
+	font-size: 1.05rem;
+	color: #1f1a15;
+}
+
+.exhibit-person-card__role {
+	margin: 0 0 0.5rem;
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: #7b5234;
+}
+
+.exhibit-person-card__bio {
+	margin: 0;
+	font-size: 0.92rem;
+	color: #5e5650;
+	line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+	.exhibit-person-card {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.filter-chip,
+	.filter-chip:hover {
+		transition: none;
+		transform: none;
+	}
+
+	.exhibit-actions__btn,
+	.exhibit-actions__btn:active {
+		transition: none;
+		transform: none;
+	}
+}

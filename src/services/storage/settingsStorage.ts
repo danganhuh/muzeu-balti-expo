@@ -1,6 +1,7 @@
 import type { AppSettings, LanguageCode, ThemeChoice } from '../../types/settings'
+import { STORAGE_KEYS } from './keys'
 
-const STORAGE_KEY = 'vitrina:settings'
+const STORAGE_KEY = STORAGE_KEYS.settings
 
 const defaultSettings: AppSettings = {
   theme: 'system',

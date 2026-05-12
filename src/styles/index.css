@@ -13,6 +13,7 @@
 @import "./vendor/tum-web-lab2-mission-section.css";
 @import "./theme-dark.css";
 @import "./app-shell.css";
+@import "./exhibits-app.css";
 
 /* Ajustări minime pentru aplicație (peste stilul landingului) */
 #root {
