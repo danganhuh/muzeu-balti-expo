@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import type { LanguageCode } from '../../types/settings'
-import { useSetLanguage } from '../../providers/I18nProvider'
+import { useSetLanguage } from '../../i18n/useSetLanguage'
 
 const langs: LanguageCode[] = ['ro', 'ru', 'en']
 

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useTheme } from '../../providers/ThemeProvider'
+import { useTheme } from '../../theme/useTheme'
 
 export function ThemeToggle() {
   const { t } = useTranslation()

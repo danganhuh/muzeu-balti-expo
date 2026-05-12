@@ -1,14 +1,7 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { AppSettings, ThemeChoice } from '../types/settings'
 import { loadSettings, saveSettings } from '../services/storage/settingsStorage'
-
-type ThemeContextValue = {
-  theme: ThemeChoice
-  resolved: 'light' | 'dark'
-  setTheme: (t: ThemeChoice) => void
-}
-
-const ThemeContext = createContext<ThemeContextValue | null>(null)
+import { ThemeContext } from '../theme/themeContext'
 
 function getSystemDark() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -23,10 +16,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState<AppSettings>(() => loadSettings())
   const [systemTick, setSystemTick] = useState(0)
 
-  const resolved = useMemo(
-    () => resolveTheme(settings.theme),
-    [settings.theme, systemTick]
-  )
+  const resolved = useMemo(() => {
+    void systemTick
+    return resolveTheme(settings.theme)
+  }, [settings.theme, systemTick])
 
   useEffect(() => {
     document.documentElement.dataset.theme = resolved
@@ -58,10 +51,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-}
-
-export function useTheme() {
-  const ctx = useContext(ThemeContext)
-  if (!ctx) throw new Error('useTheme must be used within ThemeProvider')
-  return ctx
 }

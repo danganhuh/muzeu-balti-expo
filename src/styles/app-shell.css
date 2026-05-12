@@ -185,6 +185,24 @@ html[data-theme='dark'] .logo__img {
 	filter: brightness(1.15) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 }
 
+@media (max-width: 960px) {
+	.header__inner {
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.nav-main {
+		order: 3;
+		width: 100%;
+	}
+
+	.nav-main .nav__list {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		gap: 0.5rem 1rem;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.header-toolbar__btn,
 	.lang-switcher__btn {
